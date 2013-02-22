@@ -5,7 +5,9 @@
  * luminous.ACTION_MULTIPLE_PICK for choosing multiple image.
  * Also custom Theme.
 
-![Screenshot](https://raw.github.com/luminousman/DatePicker/master/1.png)
+![Screenshot](https://raw.github.com/luminousman/MultipleImagePick/master/1.png)
+![Screenshot](https://raw.github.com/luminousman/MultipleImagePick/master/2.png)
+![Screenshot](https://raw.github.com/luminousman/MultipleImagePick/master/3.png)
  
 ## Usage
 
