@@ -49,3 +49,17 @@ startActivityForResult(i, 200);
 	}
 ```
 
+In AndroidManifest.xml
+
+``` xml
+
+ <activity android:name="CustomGalleryActivity" >
+            <intent-filter>
+                <action android:name="luminous.ACTION_PICK" />
+                <action android:name="luminous.ACTION_MULTIPLE_PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+ </activity>
+```
+
