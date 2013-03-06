@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -19,9 +20,6 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.assist.PauseOnScrollListener;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
 public class MainActivity extends Activity {
 
@@ -44,14 +42,13 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
 
 		init();
-
+		initImageLoader();
 	}
 
 	private void initImageLoader() {
 		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-				.cacheOnDisc().imageScaleType(ImageScaleType.EXACTLY)
-				.bitmapConfig(Bitmap.Config.RGB_565)
-				.displayer(new FadeInBitmapDisplayer(400)).build();
+				.cacheOnDisc().imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+				.bitmapConfig(Bitmap.Config.RGB_565).build();
 		ImageLoaderConfiguration.Builder builder = new ImageLoaderConfiguration.Builder(
 				this).defaultDisplayImageOptions(defaultOptions).memoryCache(
 				new WeakMemoryCache());
@@ -62,15 +59,13 @@ public class MainActivity extends Activity {
 	}
 
 	private void init() {
-		initImageLoader();
 
 		handler = new Handler();
 		gridGallery = (GridView) findViewById(R.id.gridGallery);
-		adapter = new GalleryAdapter(getApplicationContext(), imageLoader);
+		gridGallery.setFastScrollEnabled(true);
+		adapter = new GalleryAdapter(getApplicationContext());
 		adapter.setMultiplePick(false);
 		gridGallery.setAdapter(adapter);
-		gridGallery.setOnScrollListener(new PauseOnScrollListener(imageLoader,
-				true, true));
 
 		viewSwitcher = (ViewSwitcher) findViewById(R.id.viewSwitcher);
 		viewSwitcher.setDisplayedChild(1);

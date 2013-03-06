@@ -2,17 +2,9 @@ package com.luminous.pick;
 
 import java.util.ArrayList;
 
-import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.assist.PauseOnScrollListener;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -34,7 +26,6 @@ public class CustomGalleryActivity extends Activity {
 	Button btnGalleryOk;
 
 	String action;
-	ImageLoader imageLoader;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -50,13 +41,11 @@ public class CustomGalleryActivity extends Activity {
 	}
 
 	private void init() {
-		initImageLoader();
 
 		handler = new Handler();
 		gridGallery = (GridView) findViewById(R.id.gridGallery);
-		adapter = new GalleryAdapter(getApplicationContext(), imageLoader);
-		gridGallery.setOnScrollListener(new PauseOnScrollListener(imageLoader,
-				true, true));
+		gridGallery.setFastScrollEnabled(true);
+		adapter = new GalleryAdapter(getApplicationContext());
 
 		if (action.equalsIgnoreCase(Action.ACTION_MULTIPLE_PICK)) {
 
@@ -96,19 +85,6 @@ public class CustomGalleryActivity extends Activity {
 
 		}.start();
 
-	}
-
-	private void initImageLoader() {
-		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-				.cacheOnDisc().imageScaleType(ImageScaleType.EXACTLY)
-				.bitmapConfig(Bitmap.Config.RGB_565).build();
-		ImageLoaderConfiguration.Builder builder = new ImageLoaderConfiguration.Builder(
-				this).defaultDisplayImageOptions(defaultOptions).memoryCache(
-				new WeakMemoryCache());
-
-		ImageLoaderConfiguration config = builder.build();
-		imageLoader = ImageLoader.getInstance();
-		imageLoader.init(config);
 	}
 
 	private void checkImageStatus() {
