@@ -41,8 +41,8 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 
-		init();
-		initImageLoader();
+        initImageLoader();
+        init();
 	}
 
 	private void initImageLoader() {
@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 		handler = new Handler();
 		gridGallery = (GridView) findViewById(R.id.gridGallery);
 		gridGallery.setFastScrollEnabled(true);
-		adapter = new GalleryAdapter(getApplicationContext());
+		adapter = new GalleryAdapter(getApplicationContext(), imageLoader);
 		adapter.setMultiplePick(false);
 		gridGallery.setAdapter(adapter);
 

@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class CustomGalleryActivity extends Activity {
 
@@ -45,7 +46,7 @@ public class CustomGalleryActivity extends Activity {
 		handler = new Handler();
 		gridGallery = (GridView) findViewById(R.id.gridGallery);
 		gridGallery.setFastScrollEnabled(true);
-		adapter = new GalleryAdapter(getApplicationContext());
+		adapter = new GalleryAdapter(getApplicationContext(), ImageLoader.getInstance());
 
 		if (action.equalsIgnoreCase(Action.ACTION_MULTIPLE_PICK)) {
 
