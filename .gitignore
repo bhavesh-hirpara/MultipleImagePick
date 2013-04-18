@@ -169,3 +169,5 @@ gen/
 .idea/
 *.iml
 out/
+build-log.xml
+build.log
