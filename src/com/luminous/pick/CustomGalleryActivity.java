@@ -1,7 +1,5 @@
 package com.luminous.pick;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -21,6 +20,9 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class CustomGalleryActivity extends Activity {
 
@@ -181,8 +183,9 @@ public class CustomGalleryActivity extends Activity {
 			e.printStackTrace();
 		}
 
-		return galleryList;
-
+        // show newest photo at beginning of the list
+		Collections.reverse(galleryList);
+        return galleryList;
 	}
 
 }
