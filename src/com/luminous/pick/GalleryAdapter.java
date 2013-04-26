@@ -105,7 +105,7 @@ public class GalleryAdapter extends BaseAdapter {
 		notifyDataSetChanged();
 	}
 
-	public void changeSelection(int position) {
+	public void changeSelection(View v, int position) {
 
 		if (data.get(position).isSeleted) {
 			data.get(position).isSeleted = false;
@@ -113,7 +113,7 @@ public class GalleryAdapter extends BaseAdapter {
 			data.get(position).isSeleted = true;
 		}
 
-		notifyDataSetChanged();
+        ((ViewHolder) v.getTag()).imgQueueMultiSelected.setSelected(data.get(position).isSeleted);
 	}
 
 	@Override
@@ -141,8 +141,10 @@ public class GalleryAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
+        holder.imgQueue.setTag(position);
 
 		try {
+            holder.imgQueue.setImageResource(R.drawable.no_media);
 			imageLoader.displayImage("file://" + data.get(position).sdcardPath,
 					holder.imgQueue);
 
