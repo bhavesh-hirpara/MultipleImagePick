@@ -1,25 +1,23 @@
 package com.luminous.pick;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ViewSwitcher;
-
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -41,8 +39,8 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 
-		init();
-		initImageLoader();
+        initImageLoader();
+        init();
 	}
 
 	private void initImageLoader() {
@@ -63,7 +61,7 @@ public class MainActivity extends Activity {
 		handler = new Handler();
 		gridGallery = (GridView) findViewById(R.id.gridGallery);
 		gridGallery.setFastScrollEnabled(true);
-		adapter = new GalleryAdapter(getApplicationContext());
+		adapter = new GalleryAdapter(getApplicationContext(), imageLoader);
 		adapter.setMultiplePick(false);
 		gridGallery.setAdapter(adapter);
 
