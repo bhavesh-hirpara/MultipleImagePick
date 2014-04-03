@@ -1,28 +1,33 @@
 package com.luminous.pick;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-
-import java.util.ArrayList;
-import java.util.Collections;
+import com.nostra13.universalimageloader.core.assist.PauseOnScrollListener;
+import com.nostra13.universalimageloader.utils.StorageUtils;
 
 public class CustomGalleryActivity extends Activity {
 
@@ -34,9 +39,9 @@ public class CustomGalleryActivity extends Activity {
 	Button btnGalleryOk;
 
 	String action;
-    private ImageLoader imageLoader;
+	private ImageLoader imageLoader;
 
-    @Override
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -46,22 +51,36 @@ public class CustomGalleryActivity extends Activity {
 		if (action == null) {
 			finish();
 		}
-        initImageLoader();
+		initImageLoader();
 		init();
 	}
 
-    private void initImageLoader() {
-        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .cacheOnDisc().imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
-                .bitmapConfig(Bitmap.Config.RGB_565).build();
-        ImageLoaderConfiguration.Builder builder = new ImageLoaderConfiguration.Builder(
-                this).defaultDisplayImageOptions(defaultOptions).memoryCache(
-                new WeakMemoryCache());
+	private void initImageLoader() {
+		try {
+			String CACHE_DIR = Environment.getExternalStorageDirectory()
+					.getAbsolutePath() + "/.temp_tmp";
+			new File(CACHE_DIR).mkdirs();
 
-        ImageLoaderConfiguration config = builder.build();
-        imageLoader = ImageLoader.getInstance();
-        imageLoader.init(config);
-    }
+			File cacheDir = StorageUtils.getOwnCacheDirectory(getBaseContext(),
+					CACHE_DIR);
+
+			DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+					.cacheOnDisc(true).imageScaleType(ImageScaleType.EXACTLY)
+					.bitmapConfig(Bitmap.Config.RGB_565).build();
+			ImageLoaderConfiguration.Builder builder = new ImageLoaderConfiguration.Builder(
+					getBaseContext())
+					.defaultDisplayImageOptions(defaultOptions)
+					.discCache(new UnlimitedDiscCache(cacheDir))
+					.memoryCache(new WeakMemoryCache());
+
+			ImageLoaderConfiguration config = builder.build();
+			imageLoader = ImageLoader.getInstance();
+			imageLoader.init(config);
+
+		} catch (Exception e) {
+
+		}
+	}
 
 	private void init() {
 
@@ -69,6 +88,9 @@ public class CustomGalleryActivity extends Activity {
 		gridGallery = (GridView) findViewById(R.id.gridGallery);
 		gridGallery.setFastScrollEnabled(true);
 		adapter = new GalleryAdapter(getApplicationContext(), imageLoader);
+		PauseOnScrollListener listener = new PauseOnScrollListener(imageLoader,
+				true, true);
+		gridGallery.setOnScrollListener(listener);
 
 		if (action.equalsIgnoreCase(Action.ACTION_MULTIPLE_PICK)) {
 
@@ -183,9 +205,9 @@ public class CustomGalleryActivity extends Activity {
 			e.printStackTrace();
 		}
 
-        // show newest photo at beginning of the list
+		// show newest photo at beginning of the list
 		Collections.reverse(galleryList);
-        return galleryList;
+		return galleryList;
 	}
 
 }

@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 
 public class GalleryAdapter extends BaseAdapter {
 
@@ -25,7 +26,7 @@ public class GalleryAdapter extends BaseAdapter {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mContext = c;
 		this.imageLoader = imageLoader;
-        clearCache();
+		clearCache();
 	}
 
 	@Override
@@ -114,13 +115,14 @@ public class GalleryAdapter extends BaseAdapter {
 			data.get(position).isSeleted = true;
 		}
 
-        ((ViewHolder) v.getTag()).imgQueueMultiSelected.setSelected(data.get(position).isSeleted);
+		((ViewHolder) v.getTag()).imgQueueMultiSelected.setSelected(data
+				.get(position).isSeleted);
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
-		ViewHolder holder;
+		final ViewHolder holder;
 		if (convertView == null) {
 
 			convertView = infalter.inflate(R.layout.gallery_item, null);
@@ -142,12 +144,19 @@ public class GalleryAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-        holder.imgQueue.setTag(position);
+		holder.imgQueue.setTag(position);
 
 		try {
-            holder.imgQueue.setImageResource(R.drawable.no_media);
+
 			imageLoader.displayImage("file://" + data.get(position).sdcardPath,
-					holder.imgQueue);
+					holder.imgQueue, new SimpleImageLoadingListener() {
+						@Override
+						public void onLoadingStarted(String imageUri, View view) {
+							holder.imgQueue
+									.setImageResource(R.drawable.no_media);
+							super.onLoadingStarted(imageUri, view);
+						}
+					});
 
 			if (isActionMultiplePick) {
 
