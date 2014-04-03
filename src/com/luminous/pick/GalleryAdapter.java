@@ -26,7 +26,7 @@ public class GalleryAdapter extends BaseAdapter {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mContext = c;
 		this.imageLoader = imageLoader;
-		clearCache();
+		// clearCache();
 	}
 
 	@Override
