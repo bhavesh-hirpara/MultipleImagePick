@@ -188,6 +188,7 @@ public class CustomGalleryActivity extends Activity {
 			Cursor imagecursor = managedQuery(
 					MediaStore.Images.Media.EXTERNAL_CONTENT_URI, columns,
 					null, null, orderBy);
+
 			if (imagecursor != null && imagecursor.getCount() > 0) {
 
 				while (imagecursor.moveToNext()) {
@@ -197,6 +198,7 @@ public class CustomGalleryActivity extends Activity {
 							.getColumnIndex(MediaStore.Images.Media.DATA);
 
 					item.sdcardPath = imagecursor.getString(dataColumnIndex);
+
 					galleryList.add(item);
 				}
 			}

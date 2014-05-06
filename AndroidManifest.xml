@@ -8,6 +8,8 @@
         android:minSdkVersion="7"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -32,4 +34,4 @@
         </activity>
     </application>
 
-</manifest> 
+</manifest>
