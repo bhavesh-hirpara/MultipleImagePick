@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:src="@mipmap/logo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/primary" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:contentPaddingBottom="10dp"
+                    app:contentPaddingLeft="12dp"
+                    app:contentPaddingRight="12dp"
+                    app:contentPaddingTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="0px"
+                            android:layout_height="0px"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true" />
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/TextAppearence.App.TextInputLayout_"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hintAnimationEnabled="true"
+                            app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout_">
+
+                            <com.common.view.CEditTextView
+                                android:id="@+id/editRegFirstName"
+                                style="@style/txt_333_16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edittext_bg"
+                                android:drawableLeft="@drawable/ic_person_black_24dp"
+                                android:drawablePadding="10dp"
+                                android:hint="@string/hint_firstname"
+                                android:inputType="textCapWords"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@null" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/TextAppearence.App.TextInputLayout_"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:hintAnimationEnabled="true"
+                            app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout_">
+
+                            <com.common.view.CEditTextView
+                                android:id="@+id/editRegLastName"
+                                style="@style/txt_333_16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/edittext_bg"
+                                android:drawableLeft="@drawable/ic_person_black_24dp"
+                                android:drawablePadding="10dp"
+                                android:hint="@string/hint_lastname"
+                                android:inputType="textCapWords"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@null" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/TextAppearence.App.TextInputLayout_"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:hintAnimationEnabled="true"
+                            app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout_">
+
+                            <com.common.view.CEditTextView
+                                android:id="@+id/editRegCompanyName"
+                                style="@style/txt_333_16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/edittext_bg"
+                                android:drawableLeft="@drawable/ic_business_black_24dp"
+                                android:drawablePadding="10dp"
+                                android:hint="@string/hint_company"
+                                android:inputType="textCapWords"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@null" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/TextAppearence.App.TextInputLayout_"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:hintAnimationEnabled="true"
+                            app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout_">
+
+                            <com.common.view.CEditTextView
+                                android:id="@+id/editRegEmail"
+                                style="@style/txt_333_16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/edittext_bg"
+                                android:drawableLeft="@drawable/ic_email_24dp"
+                                android:drawablePadding="10dp"
+                                android:hint="@string/hint_email"
+                                android:inputType="textEmailAddress"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@null" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.design.widget.TextInputLayout
+                                style="@style/TextAppearence.App.TextInputLayout_"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:hintAnimationEnabled="true"
+                                app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout_">
+
+                                <com.common.view.CEditTextView
+                                    android:id="@+id/editRegCountry"
+                                    style="@style/txt_333_16"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/edittext_bg"
+                                    android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                                    android:drawablePadding="10dp"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:hint="@string/hint_country"
+                                    android:inputType="textCapWords"
+                                    android:longClickable="false"
+                                    android:padding="5dp"
+                                    android:singleLine="true"
+                                    android:textCursorDrawable="@null" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|right"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="@null"
+                                android:padding="5dp"
+                                android:src="@mipmap/dropdwn_arrow" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <com.common.view.CBButtonViewM
+            android:id="@+id/btnSignup"
+            style="@style/LightFlatWaveColorButtonRippleStyle_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/btn_bg_"
+            android:text="@string/btn_signup"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>

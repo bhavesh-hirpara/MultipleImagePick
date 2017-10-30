@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light___"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <!--<android.support.design.widget.CollapsingToolbarLayout-->
+        <!--android:id="@+id/collapsing_toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--app:contentScrim="@android:color/transparent"-->
+        <!--app:expandedTitleMarginStart="48dp"-->
+        <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <include layout="@layout/topbar" />
+
+            <ImageView
+                android:id="@+id/imgRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end|right"
+                android:contentDescription="@null"
+                android:padding="10dp"
+                android:src="@drawable/ic_refresh_24dp" />
+        </FrameLayout>
+
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

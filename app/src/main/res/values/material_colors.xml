@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/primary</color>
+    <color name="colorPrimaryDark">@color/primaryDark</color>
+    <color name="colorAccent">@color/accent</color>
+
+    <color name="colorControlNormal">#FF78909C</color>
+    <color name="colorControlActivated">#FF1c5b86</color>
+    <color name="colorSwitchThumbNormal">#FF78909C</color>
+
+    <color name="colorPrimaryQuarter">#331c5b86</color>
+    <color name="colorPrimaryHalf">#901c5b86</color>
+    <color name="colorControlNormalHalf">#9078909C</color>
+    <color name="colorControlActivatedHalf">#FF94c5e6</color>
+    <color name="colorAccentQuarter">#3300E5FF</color>
+    <color name="colorAccentHalf">#9000E5FF</color>
+
+
+    <color name="colorPrimaryHalf_">@color/primaryDark</color>
+
+    <array name="progress_colors_light">
+        <item>#FF1c5b86</item>
+        <item>#FFD8433C</item>
+        <item>#FFF2AF3A</item>
+        <item>#FF279B5E</item>
+    </array>
+
+    <array name="progress_colors_dark">
+        <item>#FF00E5FF</item>
+        <item>#ffd81d5a</item>
+        <item>#fff27512</item>
+        <item>#ff63bc34</item>
+    </array>
+
+    <array name="in_colors_light">
+        <item>#4B1c5b86</item>
+        <item>#331c5b86</item>
+        <item>#191c5b86</item>
+    </array>
+
+    <array name="in_colors_dark">
+        <item>#4B00E5FF</item>
+        <item>#3300E5FF</item>
+        <item>#1900E5FF</item>
+    </array>
+
+    <color name="tpi_checked">#FFFFFFFF</color>
+    <color name="tpi_unchecked">#99FFFFFF</color>
+
+    <color name="et_divider_focused">@color/colorControlActivated</color>
+    <color name="et_divider_not_focused">#FF6D6D6D</color>
+    <color name="et_divider_disable">#FFC1C1C1</color>
+
+
+</resources>

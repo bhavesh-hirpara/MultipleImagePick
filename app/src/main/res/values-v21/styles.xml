@@ -1,0 +1,16 @@
+<resources>>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <!--<item name="android:statusBarColor">#AA1a3f69</item>-->
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
+    <style name="commonListItemStyle">
+        <item name="android:translationZ">2dp</item>
+    </style>
+</resources>

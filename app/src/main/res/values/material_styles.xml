@@ -1,0 +1,110 @@
+<resources>
+
+    <style name="MenuItemRippleStyle" parent="Material.Drawable.Ripple.Wave">
+        <item name="rd_rippleColor">#902DA0FF</item>
+        <item name="rd_rippleAnimDuration">300</item>
+        <item name="rd_maskType">rectangle</item>
+        <item name="rd_cornerRadius">0dp</item>
+    </style>
+
+    <!-- AppBar Style -->
+
+    <style name="AppBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="selectableItemBackground">@null</item>
+    </style>
+
+    <!-- Navigator Drawable -->
+
+    <style name="NavigatorDrawableIcon" parent="Material.Drawable.NavigationDrawerIcon">
+        <item name="lmd_strokeSize">3dp</item>
+        <item name="lmd_padding">18dp</item>
+    </style>
+
+    <style name="NavigationDrawerDrawable">
+        <item name="nd_ripple">@style/ToolbarRippleStyle</item>
+        <item name="nd_icon">@style/NavigatorDrawableIcon</item>
+    </style>
+
+    <style name="ToolbarRippleStyle" parent="Material.Drawable.Ripple.Touch.MatchView.Light">
+        <item name="rd_backgroundColor">@android:color/transparent</item>
+        <item name="rd_rippleColor">#33FFFFFF</item>
+    </style>
+
+    <!-- SnackBar Style -->
+
+    <style name="SnackBarSingleLine" parent="Material.Widget.SnackBar.Mobile">
+        <item name="sb_text">This is single-line snackbar.</item>
+        <item name="sb_actionText">CLOSE</item>
+        <item name="sb_duration">0</item>
+    </style>
+
+    <style name="SnackBarMultiLine" parent="Material.Widget.SnackBar.Mobile.MultiLine">
+        <item name="sb_text">This is multi-line snackbar.\nIt will auto-close after 5s.</item>
+        <item name="sb_actionText"></item>
+        <item name="sb_duration">5000</item>
+    </style>
+
+    <style name="SimpleDialog" parent="Material.App.Dialog.Simple">
+        <item name="di_inAnimation">@anim/anim_scale_in</item>
+        <item name="di_outAnimation">@anim/anim_scale_out</item>
+    </style>
+
+    <style name="SimpleDialogLight" parent="Material.App.Dialog.Simple.Light">
+        <item name="di_inAnimation">@anim/anim_scale_in</item>
+        <item name="di_outAnimation">@anim/anim_scale_out</item>
+    </style>
+
+    <!-- ContactView -->
+    <style name="ContactView">
+        <item name="android:minHeight">56dp</item>
+        <item name="cv_buttonSize">0dp</item>
+        <item name="cv_avatarSize">40dp</item>
+        <item name="cv_spacing">8dp</item>
+        <item name="cv_nameTextAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="cv_nameTextColor">@color/abc_primary_text_material_light</item>
+        <item name="cv_addressTextAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="cv_addressTextColor">@color/abc_primary_text_material_light</item>
+    </style>
+
+    <style name="ReplacementContactView" parent="Material.Drawable.Ripple.Wave.Light">
+        <item name="rd_cornerRadius">0dp</item>
+        <item name="rd_delayClick">none</item>
+
+        <item name="android:minHeight">56dp</item>
+        <item name="cv_buttonSize">0dp</item>
+        <item name="cv_avatarSize">40dp</item>
+        <item name="cv_spacing">8dp</item>
+        <item name="cv_nameTextAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="cv_nameTextColor">@color/abc_primary_text_material_light</item>
+        <item name="cv_addressTextAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="cv_addressTextColor">@color/abc_primary_text_material_light</item>
+    </style>
+
+    <style name="SelectedContactView" parent="Material.Drawable.Ripple.Wave.Light">
+        <item name="android:background">#FF00B8D4</item>
+        <item name="rd_cornerRadius">0dp</item>
+        <item name="rd_delayClick">none</item>
+
+        <item name="android:minHeight">72dp</item>
+        <item name="cv_buttonSrc">@drawable/ic_cancel_white_24dp</item>
+        <item name="cv_buttonSize">48dp</item>
+        <item name="cv_nameTextColor">#FFFFFFFF</item>
+        <item name="cv_addressTextColor">#FFFFFFFF</item>
+        <item name="cv_avatarSize">40dp</item>
+        <item name="cv_spacing">8dp</item>
+        <item name="cv_nameTextAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="cv_addressTextAppearance">@style/TextAppearance.AppCompat.Body1</item>
+    </style>
+
+    <style name="ContactEditText" parent="Material.Widget.EditText.Light">
+        <item name="cet_spanHeight">32dp</item>
+        <item name="cet_spanMaxWidth">150dp</item>
+        <item name="cet_spanPaddingLeft">8dp</item>
+        <item name="cet_spanPaddingRight">12dp</item>
+        <item name="cet_spanTextSize">14sp</item>
+        <item name="cet_spanTextColor">@color/abc_primary_text_material_light</item>
+        <item name="cet_spanBackgroundColor">#FFE0E0E0</item>
+        <item name="cet_spanSpacing">4dp</item>
+    </style>
+
+</resources>

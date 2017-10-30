@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    android:orientation="horizontal"
+    app:contentInsetStart="0dp"
+    app:layout_collapseMode="pin"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+    app:theme="@style/Toolbar">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvTitleText"
+                style="@style/txt_fff_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/app_name" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            android:src="@drawable/ic_menu"
+            android:visibility="visible" />
+
+    </FrameLayout>
+    <!--<ImageView-->
+    <!--android:id="@+id/img_more"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical|end"-->
+    <!--android:contentDescription="@null"-->
+    <!--android:padding="10dp"-->
+    <!--android:src="@mipmap/ic_menu"-->
+    <!--android:visibility="visible" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_search"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical|right"-->
+    <!--android:contentDescription="@null"-->
+    <!--android:padding="10dp"-->
+    <!--android:src="@drawable/btn_search" />-->
+
+</android.support.v7.widget.Toolbar>
