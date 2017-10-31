@@ -23,6 +23,8 @@ public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.btnLogin)
     Button btnLogin;
+    @BindView(R.id.btnRegister)
+    Button btnRegister;
 
     @BindView(R.id.editLoginEmail)
     AppCompatEditText editLoginEmail;
@@ -30,11 +32,11 @@ public class LoginActivity extends BaseActivity {
     @BindView(R.id.editLoginPass)
     AppCompatEditText editLoginPass;
 
-    @BindView(R.id.tvCreateAccount)
-    TextView tvCreateAccount;
+    @BindView(R.id.tvForgotPassword)
+    TextView tvForgotPassword;
 
-    @BindView(R.id.tvForgotPass)
-    TextView tvForgotPass;
+    @BindView(R.id.tvNewAdmision)
+    TextView tvNewAdmision;
 
     boolean isRider;
 
@@ -58,18 +60,26 @@ public class LoginActivity extends BaseActivity {
 //            editLoginPass.setText("123");
         }
 
-        tvCreateAccount.setOnClickListener(new View.OnClickListener() {
+        tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), SignupActivity.class);
+                Intent i = new Intent(getActivity(), ForgotPasswordActivity.class);
                 startActivity(i);
             }
         });
 
-        tvForgotPass.setOnClickListener(new View.OnClickListener() {
+        tvNewAdmision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), ForgetPasswordActivity.class);
+//                Intent i = new Intent(getActivity(), SignupActivity.class);
+//                startActivity(i);
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), RegisterActivity.class);
                 startActivity(i);
             }
         });

@@ -60,22 +60,24 @@ public class SplashActivity extends BaseActivity {
         @Override
         public void run() {
             handler.removeCallbacks(startApp);
-            Debug.e(TAG, "startApp");
-            if (!Utils.isUserLoggedIn(getActivity())) {
+//            Debug.e(TAG, "startApp");
+//            if (!Utils.isUserLoggedIn(getActivity())) {
+//
+//                Intent i = new Intent(getActivity(), LoginActivity.class);
+//                startActivity(i);
+//                finish();
+//
+//            } else {
+//
+//                Intent i = new Intent(getActivity(),
+//                        MainActivity.class);
+//                startActivity(i);
+//                finish();
+//
+//            }
 
-                Intent i = new Intent(getActivity(), LoginActivity.class);
-                startActivity(i);
-                finish();
-
-            } else {
-
-                Intent i = new Intent(getActivity(),
-                        MainActivity.class);
-                startActivity(i);
-                finish();
-
-            }
-
+            Intent i = new Intent(getActivity(), LoginActivity.class);
+            startActivity(i);
         }
 
     };

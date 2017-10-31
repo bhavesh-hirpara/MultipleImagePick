@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
@@ -15,20 +16,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.admision.adapter.SideMenuAdapter;
 import com.admision.utils.AsyncProgressDialog;
 import com.admision.utils.Constant;
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.util.ArrayList;
 
 
 public class BaseActivity extends AppCompatActivity {
     AsyncProgressDialog ad;
 
+    ArrayList<MenuItem> menuItems;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,43 +53,58 @@ public class BaseActivity extends AppCompatActivity {
 
     public void initDrawer() {
 
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.mRecyclerView);
+        RecyclerView.LayoutManager layoutManager;
+        SideMenuAdapter mAdapter;
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+//        layoutManager = new LinearLayoutManager(this);
+//        mRecyclerView.setLayoutManager(layoutManager);
+//        mAdapter = new SideMenuAdapter(this);
+//        mRecyclerView.setAdapter(mAdapter);
+
+//        mAdapter.addAll(menuItems);
 
 
 //create the drawer and remember the `Drawer` result object
         result = new DrawerBuilder()
                 .withActivity(this).withCloseOnClick(true).withSelectedItemByPosition(-1)
                 .withHeader(R.layout.nav_header_main)
-                .addDrawerItems(
-                        new PrimaryDrawerItem().withName("Dashboard").withSelectable(false).withIcon(R.drawable.ic_place),
-                        new PrimaryDrawerItem().withName("Trip").withSelectable(false).withIcon(R.drawable.ic_call_24dp),
-                        new PrimaryDrawerItem().withName("Violations").withSelectable(false).withIcon(R.drawable.ic_chat),
-                        new PrimaryDrawerItem().withName("Hos").withSelectable(false).withIcon(R.drawable.ic_call_24dp),
-                        new PrimaryDrawerItem().withName("VIR").withSelectable(false).withIcon(R.drawable.ic_fax_24dp),
-                        new PrimaryDrawerItem().withName("Change Password").withSelectable(false).withIcon(R.drawable.ic_chat),
-                        new PrimaryDrawerItem().withName("Logout").withSelectable(false).withIcon(R.drawable.ic_delete_24dp)
+//                .withCustomView(mRecyclerView)
 
-                )
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    @Override
-                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        if (position == 0) {
-
-
-                        } else if (position == 1) {
-
-
-                        } else if (position == 2) {
-
-
-                        } else if (position == 6) {
-                            confirmLogout();
-                        }
-                        return true;
-                    }
-                })
                 .build();
+
+//                .addDrawerItems(
+//                        new PrimaryDrawerItem().withName("Dashboard").withSelectable(false).withIcon(R.drawable.ic_place),
+//                        new PrimaryDrawerItem().withName("Trip").withSelectable(false).withIcon(R.drawable.ic_call_24dp),
+//                        new PrimaryDrawerItem().withName("Violations").withSelectable(false).withIcon(R.drawable.ic_chat),
+//                        new PrimaryDrawerItem().withName("Hos").withSelectable(false).withIcon(R.drawable.ic_call_24dp),
+//                        new PrimaryDrawerItem().withName("VIR").withSelectable(false).withIcon(R.drawable.ic_fax_24dp),
+//                        new PrimaryDrawerItem().withName("Change Password").withSelectable(false).withIcon(R.drawable.ic_chat),
+//                        new PrimaryDrawerItem().withName("Logout").withSelectable(false).withIcon(R.drawable.ic_delete_24dp)
+//
+//                )
+//                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+//                    @Override
+//                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+//                        if (position == 0) {
+//
+//
+//                        } else if (position == 1) {
+//
+//
+//                        } else if (position == 2) {
+//
+//
+//                        } else if (position == 6) {
+//                            confirmLogout();
+//                        }
+//                        return true;
+//                    }
+//                })
+//                .build();
 
         ImageView imgMenu = (ImageView) findViewById(R.id.imgMenu);
         if (imgMenu != null) {
@@ -104,6 +122,11 @@ public class BaseActivity extends AppCompatActivity {
 
 //        initMenuItems();
 //        fillProfileData();
+    }
+
+    public static class MenuItem {
+        //        public String navImage;
+        public String navName = "abc";
     }
 
     private void confirmLogout() {

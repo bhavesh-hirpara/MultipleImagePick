@@ -1,14 +1,22 @@
 package com.admision;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.admision.adapter.FindEventAdapter;
 import com.admision.utils.ExitStrategy;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends com.admision.BaseActivity {
 
+    @BindView(R.id.mRecyclerView)
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    FindEventAdapter mAdapter;
 
 //    @BindView(R.id.btnSendRequest)
 //    Button btnSendRequest;
@@ -27,9 +35,13 @@ public class MainActivity extends com.admision.BaseActivity {
     }
 
     private void init() {
-        setTitleText("Home");
-    }
+        setTitleText("FIND EVENTS");
 
+        layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mAdapter = new FindEventAdapter(this);
+        mRecyclerView.setAdapter(mAdapter);
+    }
 
     @Override
     public void onBackPressed() {

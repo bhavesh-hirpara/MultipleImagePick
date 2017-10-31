@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ECRfabTimeClock</string>
+    <string name="app_name">Admision</string>
     <string name="google_maps_key">AIzaSyBI7ducwc3o2geaLZYjblJgulQoquPMzyE</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -19,8 +19,8 @@
     <string name="btn_ok">OK</string>
     <string name="hint_email">Email Address</string>
     <string name="hint_password">Password</string>
-    <string name="btn_login">Login</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
     <string name="create_account">Create Account</string>
     <string name="or">OR</string>
     <string name="skip_login">Skip Login</string>
