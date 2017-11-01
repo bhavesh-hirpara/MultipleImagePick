@@ -113,7 +113,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="start|center_vertical"
-                                android:text="Attending? - Yes(1)  No(1)  May be(1)" />
+                                android:text="Purchased  On -  Oct  02  2017" />
 
 
                             <!--<com.common.view.CBTextView-->

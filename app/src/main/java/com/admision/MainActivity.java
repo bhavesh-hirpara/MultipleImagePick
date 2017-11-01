@@ -30,7 +30,7 @@ public class MainActivity extends com.admision.BaseActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        initDrawer();
+        initDrawer(true);
         init();
     }
 
@@ -41,6 +41,16 @@ public class MainActivity extends com.admision.BaseActivity {
         mRecyclerView.setLayoutManager(layoutManager);
         mAdapter = new FindEventAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
+
+//        mAdapter.setmEventlistener(new FindEventAdapter.Eventlistener() {
+//            @Override
+//            public void OnItemViewclick(int position, View view) {
+////                Debug.e("getItem id", "" + mAdapter.getItem(position).ID);
+////                String id = mAdapter.getItem(position).ID;
+////                Intent intent = new Intent(getActivity(),TicketsActivity.class);
+////                startActivity(intent);
+//            }
+//        });
     }
 
     @Override

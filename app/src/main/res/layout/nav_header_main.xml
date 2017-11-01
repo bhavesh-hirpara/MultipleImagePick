@@ -4,15 +4,15 @@
     android:id="@+id/navHeader"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:background="@color/primaryDark"
     android:orientation="vertical"
     android:padding="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="24dp">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgUserPhoto"
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
+
             android:orientation="vertical">
 
             <com.common.view.CTextView
@@ -34,25 +35,9 @@
                 style="@style/txt_fff_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bhavesh Hirpara" />
+                android:text="Bhavesh Hirpara"
+                android:textAlignment="center" />
 
-            <com.common.view.CTextView
-                android:id="@+id/tvMenuCompany"
-                style="@style/txt_fff_14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Kartum Infotech" />
-
-            <com.common.view.CTextView
-                android:id="@+id/tvMenuLocation"
-                style="@style/txt_fff_12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:drawablePadding="5dp"
-                android:gravity="center"
-                android:text="Gujarat, India" />
         </LinearLayout>
 
 

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <com.common.view.CTextView
+            android:id="@+id/tvBackArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_arrow_left_white"
+            android:focusable="true" />
+
+        <com.common.view.CBTextView
+            style="@style/txt_fff_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ADD EVENT"
+            android:textAlignment="center" />
+
+        <com.common.view.CTextView
+            android:id="@+id/tvObsFAQs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:drawableStart="@drawable/ic_arrow_left_white"
+            android:focusable="false"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.common.view.CTextView
+                android:id="@+id/tvSelectVenue"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:drawableRight="@drawable/ic_arrow_down_black"
+                android:gravity="start|center_vertical"
+                android:hint="Select Venue"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editCapcity"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squere_edittext"
+                android:hint="Capcity"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editStartDate"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squere_edittext"
+                android:hint="@string/start_date_time"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editName"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squere_edittext"
+                android:hint="Name"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                android:id="@+id/tvAvailableTickets"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squere_edittext"
+                android:drawableRight="@drawable/ic_arrow_down_black"
+                android:gravity="start|center_vertical"
+                android:hint="Available Tickets"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editEndDateTime"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squere_edittext"
+                android:hint="@string/end_date_time"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editPrice"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squere_edittext"
+                android:hint="Price"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_000_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center_vertical"
+                android:hint="Event Mode"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbPrivate"
+                    style="@style/txt_666_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Private" />
+
+                <RadioButton
+                    android:id="@+id/rbPublic"
+                    style="@style/txt_666_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Public" />
+
+            </LinearLayout>
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editDescription"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squere_edittext"
+                android:clickable="true"
+                android:gravity="top"
+                android:hint="Description"
+                android:padding="10dp"
+                android:textCursorDrawable="@null" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.common.view.CBButtonViewM
+            android:id="@+id/btnSave"
+            style="@style/LightFlatWaveColorButtonRippleStyle_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg_accept"
+            android:text="SAVE"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

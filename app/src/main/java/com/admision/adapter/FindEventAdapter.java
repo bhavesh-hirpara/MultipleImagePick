@@ -6,12 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.admision.BaseActivity;
 import com.admision.R;
 import com.admision.utils.Utils;
 import com.nostra13.universalimageloader.core.ImageLoader;
-
-import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 
@@ -23,7 +20,7 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
     ImageLoader imageLoader;
     //    public ArrayList<String> data = new ArrayList<>();
 //    public JSONArray data = new JSONArray();
-    private ArrayList<BaseActivity.MenuItem> data = new ArrayList<BaseActivity.MenuItem>();
+//    private ArrayList<BaseActivity.MenuItem> data = new ArrayList<BaseActivity.MenuItem>();
     Context context;
     Eventlistener mEventlistener;
 
@@ -32,10 +29,10 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
         imageLoader = Utils.initImageLoader(context);
     }
 
-    public void add(BaseActivity.MenuItem mData) {
-        data.add(mData);
-        notifyDataSetChanged();
-    }
+//    public void add(BaseActivity.MenuItem mData) {
+//        data.add(mData);
+//        notifyDataSetChanged();
+//    }
 
 //    public SettingActivity.ReminderData getItem(int pos) {
 //        try {
@@ -47,11 +44,11 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
 //        return null;
 //    }
 //
-    public void addAll(ArrayList<BaseActivity.MenuItem> files) {
-        data.clear();
-        data.addAll(files);
-        notifyDataSetChanged();
-    }
+//    public void addAll(ArrayList<BaseActivity.MenuItem> files) {
+//        data.clear();
+//        data.addAll(files);
+//        notifyDataSetChanged();
+//    }
 //
 //    public void selectAll(boolean selectall) {
 //        for (int i = 0; i < data.size(); i++) {
@@ -100,21 +97,11 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
 //        holder.tvTime.setText(Utils.nullSafe("" + item.time));
 //        holder.tvLable.setText(Utils.nullSafe("" + item.lable));
 //        holder.mSwitch.setChecked(data.get(position).isOn);
-//        holder.tvPopup.setOnClickListener(new View.OnClickListener() {
+//        holder.btnViewDetails.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                if (mEventlistener != null) {
-//                    mEventlistener.OnMenuclick(position, view);
-//                }
-//            }
-//        });
-//        holder.mSwitch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (mEventlistener != null) {
-//                    mEventlistener.onSwitchClick(position);
-//
-//
+//                    mEventlistener.OnItemViewclick(position, view);
 //                }
 //            }
 //        });
@@ -127,14 +114,12 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-//        @BindView(R.id.tvTime)
-//        TextView tvTime;
-//        @BindView(R.id.tvLable)
-//        TextView tvLable;
-//        @BindView(R.id.tvPopup)
-//        TextView tvPopup;
-//        @BindView(R.id.mSwitch)
-//        Switch mSwitch;
+//        @BindView(R.id.imgEvent)
+//        ImageView imgEvent;
+//        @BindView(R.id.btnViewDetails)
+//        Button btnViewDetails;
+//        @BindView(R.id.tvEventName)
+//        TextView tvEventName;
 //        @BindView(R.id.container)
 //        View container;
 
@@ -145,9 +130,7 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
     }
 
     public interface Eventlistener {
-        void OnMenuclick(int position, View view);
-
-        void onSwitchClick(int posion);
+        void OnItemViewclick(int position, View view);
     }
 
     public void setmEventlistener(Eventlistener eventlistener) {

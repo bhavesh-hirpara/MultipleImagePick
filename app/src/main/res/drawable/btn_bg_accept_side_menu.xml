@@ -5,11 +5,6 @@
     <solid android:color="@color/accept" />
     <corners android:radius="0dp" />
 
-    <!--<gradient-->
-    <!--android:endColor="#460c89"-->
-    <!--android:startColor="#a10592"-->
-    <!--android:type="linear" />-->
-
     <gradient
         android:angle="45"
         android:endColor="#a10592"

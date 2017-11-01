@@ -7,20 +7,25 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.admision.adapter.SideMenuAdapter;
+import com.admision.objects.MenuItem;
 import com.admision.utils.AsyncProgressDialog;
 import com.admision.utils.Constant;
+import com.admision.utils.Debug;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.common.view.SimpleListDividerDecorator;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -51,83 +56,106 @@ public class BaseActivity extends AppCompatActivity {
 
     Drawer result;
 
-    public void initDrawer() {
+    public void initDrawer(final boolean b) {
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.mRecyclerView);
-        RecyclerView.LayoutManager layoutManager;
-        SideMenuAdapter mAdapter;
+//        View v = (View) findViewById(R.id.container);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        if (b) {
+            ViewGroup drawerCustomView = (ViewGroup) getLayoutInflater().inflate(R.layout.side_menu, null, false);
 
-//        layoutManager = new LinearLayoutManager(this);
-//        mRecyclerView.setLayoutManager(layoutManager);
-//        mAdapter = new SideMenuAdapter(this);
-//        mRecyclerView.setAdapter(mAdapter);
+            RecyclerView mRecyclerView = (RecyclerView) drawerCustomView.findViewById(R.id.mRecyclerView);
+            RecyclerView.LayoutManager layoutManager;
+            final SideMenuAdapter mAdapter;
 
-//        mAdapter.addAll(menuItems);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
 
+            layoutManager = new LinearLayoutManager(this);
+            mRecyclerView.setLayoutManager(layoutManager);
+            mRecyclerView.addItemDecoration(new SimpleListDividerDecorator(getResources().getDrawable(R.drawable.list_divider), true));
+            mAdapter = new SideMenuAdapter(this);
+            mRecyclerView.setAdapter(mAdapter);
 
-//create the drawer and remember the `Drawer` result object
-        result = new DrawerBuilder()
-                .withActivity(this).withCloseOnClick(true).withSelectedItemByPosition(-1)
-                .withHeader(R.layout.nav_header_main)
-//                .withCustomView(mRecyclerView)
-
-                .build();
-
-//                .addDrawerItems(
-//                        new PrimaryDrawerItem().withName("Dashboard").withSelectable(false).withIcon(R.drawable.ic_place),
-//                        new PrimaryDrawerItem().withName("Trip").withSelectable(false).withIcon(R.drawable.ic_call_24dp),
-//                        new PrimaryDrawerItem().withName("Violations").withSelectable(false).withIcon(R.drawable.ic_chat),
-//                        new PrimaryDrawerItem().withName("Hos").withSelectable(false).withIcon(R.drawable.ic_call_24dp),
-//                        new PrimaryDrawerItem().withName("VIR").withSelectable(false).withIcon(R.drawable.ic_fax_24dp),
-//                        new PrimaryDrawerItem().withName("Change Password").withSelectable(false).withIcon(R.drawable.ic_chat),
-//                        new PrimaryDrawerItem().withName("Logout").withSelectable(false).withIcon(R.drawable.ic_delete_24dp)
-//
-//                )
-//                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-//                    @Override
-//                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-//                        if (position == 0) {
-//
-//
-//                        } else if (position == 1) {
-//
-//
-//                        } else if (position == 2) {
-//
-//
-//                        } else if (position == 6) {
-//                            confirmLogout();
-//                        }
-//                        return true;
-//                    }
-//                })
-//                .build();
-
-        ImageView imgMenu = (ImageView) findViewById(R.id.imgMenu);
-        if (imgMenu != null) {
-            imgMenu.setOnClickListener(new View.OnClickListener() {
+            mAdapter.setmEventlistener(new SideMenuAdapter.Eventlistener() {
                 @Override
-                public void onClick(View view) {
-                    if (result.isDrawerOpen()) {
-                        result.closeDrawer();
-                    } else {
-                        result.openDrawer();
+                public void OnMenuItemclick(int position, View view) {
+                    Debug.e("getItem id", "" + mAdapter.getItem(position).ID);
+                    String id = mAdapter.getItem(position).ID;
+
+                    if (id.contains("3")) {
+                        Intent intent = new Intent(getActivity(),
+                                TicketsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent);
+                        hideMenu(false);
+                        finishActivity();
+                    } else if (id.contains("2")) {
+                        Intent intent = new Intent(getActivity(),
+                                AddEventActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent);
+                        hideMenu(false);
+                        finishActivity();
+                    } else if (id.contains("5")) {
+                        Intent intent = new Intent(getActivity(),
+                                AddPromotionActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent);
+                        hideMenu(false);
+                        finishActivity();
                     }
                 }
             });
+
+            ArrayList<MenuItem> data = new ArrayList<>();
+            data.add(new MenuItem("1", R.drawable.ic_account_white, "Accounts"));
+            data.add(new MenuItem("2", R.drawable.ic_event_white_24dp, "Event"));
+            data.add(new MenuItem("3", R.drawable.ic_arrow_forward_white, "Tickets"));
+            data.add(new MenuItem("4", R.drawable.ic_location_on_white, "Venues"));
+            data.add(new MenuItem("5", R.drawable.ic_local_post_office_24dp, "Promotions"));
+            data.add(new MenuItem("6", R.drawable.ic_help_white_24dp, "Help"));
+
+            mAdapter.addAll(data);
+
+//create the drawer and remember the `Drawer` result object
+            result = new DrawerBuilder()
+                    .withActivity(this).withCloseOnClick(true).withSelectedItemByPosition(-1)
+//                .withHeader(R.layout.side_menu)
+                    .withCustomView(drawerCustomView)
+                    .build();
+
+
+            ImageView imgMenu = (ImageView) findViewById(R.id.imgMenu);
+            if (imgMenu != null) {
+                imgMenu.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (result.isDrawerOpen()) {
+                            result.closeDrawer();
+                        } else {
+                            result.openDrawer();
+                        }
+                    }
+                });
+            }
+
+        } else {
+            ImageView imgMenu = (ImageView) findViewById(R.id.imgMenu);
+            imgMenu.setVisibility(View.GONE);
         }
+
 
 //        initMenuItems();
 //        fillProfileData();
     }
 
-    public static class MenuItem {
-        //        public String navImage;
-        public String navName = "abc";
-    }
+//    public static class MenuItem {
+//        //        public String navImage;
+//        public String navName = "abc";
+//    }
 
     private void confirmLogout() {
 
@@ -167,7 +195,6 @@ public class BaseActivity extends AppCompatActivity {
         } else {
             getActivity().finish();
         }
-
     }
 
     ImageLoader imageLoader;
