@@ -5,11 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.admision.R;
 import com.admision.utils.Utils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -97,14 +100,14 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.MyViewHo
 //        holder.tvTime.setText(Utils.nullSafe("" + item.time));
 //        holder.tvLable.setText(Utils.nullSafe("" + item.lable));
 //        holder.mSwitch.setChecked(data.get(position).isOn);
-//        holder.btnViewDetails.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (mEventlistener != null) {
-//                    mEventlistener.OnItemViewclick(position, view);
-//                }
-//            }
-//        });
+        holder.btnViewDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mEventlistener != null) {
+                    mEventlistener.OnItemViewclick(position, view);
+                }
+            }
+        });
     }
 
     @Override
@@ -114,14 +117,14 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-//        @BindView(R.id.imgEvent)
-//        ImageView imgEvent;
-//        @BindView(R.id.btnViewDetails)
-//        Button btnViewDetails;
-//        @BindView(R.id.tvEventName)
-//        TextView tvEventName;
-//        @BindView(R.id.container)
-//        View container;
+        @BindView(R.id.imgEvent)
+        ImageView imgEvent;
+        @BindView(R.id.btnViewDetails)
+        TextView btnViewDetails;
+        @BindView(R.id.tvEventName)
+        TextView tvEventName;
+        @BindView(R.id.container)
+        View container;
 
         public MyViewHolder(View view) {
             super(view);

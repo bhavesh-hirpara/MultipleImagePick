@@ -61,9 +61,9 @@ public class BaseActivity extends AppCompatActivity {
 //        View v = (View) findViewById(R.id.container);
 
         if (b) {
-            ViewGroup drawerCustomView = (ViewGroup) getLayoutInflater().inflate(R.layout.side_menu, null, false);
+            ViewGroup customSideMenu = (ViewGroup) getLayoutInflater().inflate(R.layout.side_menu, null, false);
 
-            RecyclerView mRecyclerView = (RecyclerView) drawerCustomView.findViewById(R.id.mRecyclerView);
+            RecyclerView mRecyclerView = (RecyclerView) customSideMenu.findViewById(R.id.mRecyclerView);
             RecyclerView.LayoutManager layoutManager;
             final SideMenuAdapter mAdapter;
 
@@ -124,7 +124,7 @@ public class BaseActivity extends AppCompatActivity {
             result = new DrawerBuilder()
                     .withActivity(this).withCloseOnClick(true).withSelectedItemByPosition(-1)
 //                .withHeader(R.layout.side_menu)
-                    .withCustomView(drawerCustomView)
+                    .withCustomView(customSideMenu)
                     .build();
 
 

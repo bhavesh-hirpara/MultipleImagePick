@@ -48,15 +48,15 @@ public class TicketsActivity extends BaseActivity {
             }
         });
 
-//        mTicketsAdapter.setmEventlistener(new TicketsAdapter.Eventlistener() {
-//            @Override
-//            public void OnItemViewclick(int position, View view) {
-////                Debug.e("getItem id", "" + mAdapter.getItem(position).ID);
-////                String id = mAdapter.getItem(position).ID;
-////                Intent intent = new Intent(getActivity(),TicketsActivity.class);
-////                startActivity(intent);
-//            }
-//        });
+        mTicketsAdapter.setmEventlistener(new TicketsAdapter.Eventlistener() {
+            @Override
+            public void OnItemViewclick(int position, View view) {
+//                Debug.e("View Details", "" + mAdapter.getItem(position).ID);
+//                String id = mAdapter.getItem(position).ID;
+//                Intent intent = new Intent(getActivity(),TicketsActivity.class);
+//                startActivity(intent);
+            }
+        });
 
     }
 
