@@ -46,16 +46,36 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_bg_accept">
 
-                    <com.common.view.CBTextView
-                        android:id="@+id/btnViewDetails"
-                        style="@style/txt_333_14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right|center"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/btn_bg_"
-                        android:padding="5dp"
-                        android:text="View Details" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.common.view.CBTextView
+                            android:id="@+id/btnViewTickets"
+                            style="@style/txt_333_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_bg_"
+                            android:padding="5dp"
+                            android:text="View tickets" />
+
+                        <com.common.view.CBTextView
+                            android:id="@+id/btnViewDetails"
+                            style="@style/txt_333_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/btn_bg_"
+                            android:padding="5dp"
+                            android:text="View Details" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -81,7 +101,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/ic_thumb_up_white"
-                                android:drawablePadding="10dp"
+                                android:drawablePadding="5dp"
                                 android:gravity="start|center_vertical"
                                 android:text="94%" />
 
@@ -97,9 +117,25 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/ic_location_on_white"
-                                android:drawablePadding="10dp"
+                                android:drawablePadding="5dp"
                                 android:gravity="start|center_vertical"
                                 android:text="0.7mi - soho" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@color/gray_light" />
+
+                            <com.common.view.CBTextView
+                                style="@style/txt_fff_10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_attach_money_white_24dp"
+                                android:drawablePadding="5dp"
+                                android:gravity="start|center_vertical"
+                                android:text="0.5.50" />
 
                         </LinearLayout>
 

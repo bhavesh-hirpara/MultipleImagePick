@@ -89,20 +89,27 @@
                 <!--android:textCursorDrawable="@null" />-->
                 <!--</android.support.design.widget.TextInputLayout>-->
 
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Email Id" />
+
                 <com.common.view.CEditTextView
                     android:id="@+id/editLoginEmail"
                     style="@style/txt_333_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/squere_edittext"
-                    android:drawableLeft="@drawable/ic_person_black_24dp"
-                    android:drawablePadding="10dp"
-                    android:hint="Email Id"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:textCursorDrawable="@null" />
+
+                <!--android:drawableLeft="@drawable/ic_person_black_24dp"-->
+                <!--android:drawablePadding="10dp"-->
 
                 <!--<android.support.design.widget.TextInputLayout-->
                 <!--style="@style/TextAppearence.App.TextInputLayout_"-->
@@ -128,21 +135,28 @@
                 <!--android:textCursorDrawable="@null" />-->
                 <!--</android.support.design.widget.TextInputLayout>-->
 
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="Password" />
+
                 <com.common.view.CEditTextView
                     android:id="@+id/editLoginPass"
                     style="@style/txt_333_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/squere_edittext"
-                    android:drawableLeft="@drawable/ic_https_black_24dp"
-                    android:drawablePadding="10dp"
-                    android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:textCursorDrawable="@null" />
+
+                <!--android:drawableLeft="@drawable/ic_https_black_24dp"-->
+                <!--android:drawablePadding="10dp"-->
 
                 <com.common.view.CBButtonViewM
                     android:id="@+id/btnLogin"

@@ -35,67 +35,97 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="First Name" />
+
                 <com.common.view.CEditTextView
                     android:id="@+id/editFirstName"
                     style="@style/txt_333_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/squere_edittext"
-                    android:hint="First Name"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:textCursorDrawable="@null" />
+
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="Last Name" />
 
                 <com.common.view.CEditTextView
                     android:id="@+id/editLastName"
                     style="@style/txt_333_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/squere_edittext"
-                    android:hint="Last Name"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:textCursorDrawable="@null" />
+
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="Email Id" />
 
                 <com.common.view.CEditTextView
                     android:id="@+id/editEmail"
                     style="@style/txt_333_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/squere_edittext"
-                    android:hint="Email Id"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:textCursorDrawable="@null" />
+
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="Password" />
 
                 <com.common.view.CEditTextView
                     android:id="@+id/editPassword"
                     style="@style/txt_333_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/squere_edittext"
-                    android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:textCursorDrawable="@null" />
 
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="Confirm Password" />
+
                 <com.common.view.CEditTextView
                     android:id="@+id/editConfPassword"
                     style="@style/txt_333_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/squere_edittext"
-                    android:hint="Confirm Password"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:padding="10dp"
