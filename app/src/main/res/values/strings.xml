@@ -146,4 +146,5 @@
     <string name="search">Search</string>
     <string name="start_date_time"><![CDATA[Start Date & Time]]></string>
     <string name="end_date_time"><![CDATA[End Date & Time]]></string>
+    <string name="click_here"><u>Click here</u></string>
 </resources>

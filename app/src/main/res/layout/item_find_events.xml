@@ -133,7 +133,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/ic_attach_money_white_24dp"
-                                android:drawablePadding="5dp"
+                                android:drawablePadding="1dp"
                                 android:gravity="start|center_vertical"
                                 android:text="0.5.50" />
 

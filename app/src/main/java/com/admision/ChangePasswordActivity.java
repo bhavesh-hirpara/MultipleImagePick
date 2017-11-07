@@ -19,14 +19,12 @@ public class ChangePasswordActivity extends BaseActivity {
 
     @BindView(R.id.tvBackArrow)
     TextView tvBackArrow;
-    @BindView(R.id.editOldPassword)
-    EditText editOldPassword;
+    @BindView(R.id.editCode)
+    EditText editCode;
     @BindView(R.id.editNewPassword)
     EditText editNewPassword;
     @BindView(R.id.editConfirmPassword)
     EditText editConfirmPassword;
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

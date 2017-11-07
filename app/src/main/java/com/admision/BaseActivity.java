@@ -62,6 +62,7 @@ public class BaseActivity extends AppCompatActivity {
 
         if (b) {
             ViewGroup customSideMenu = (ViewGroup) getLayoutInflater().inflate(R.layout.side_menu, null, false);
+//            ViewGroup drawerFooterView = (ViewGroup) getLayoutInflater().inflate(R.layout.side_menu, null, false);
 
             RecyclerView mRecyclerView = (RecyclerView) customSideMenu.findViewById(R.id.mRecyclerView);
             RecyclerView.LayoutManager layoutManager;
@@ -90,7 +91,7 @@ public class BaseActivity extends AppCompatActivity {
                         startActivity(intent);
                         hideMenu(false);
                         finishActivity();
-                    } else if (id.contains("2")) {
+                    } else if (id.contains("4")) {
                         Intent intent = new Intent(getActivity(),
                                 AddEventActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -98,7 +99,7 @@ public class BaseActivity extends AppCompatActivity {
                         startActivity(intent);
                         hideMenu(false);
                         finishActivity();
-                    } else if (id.contains("5")) {
+                    } else if (id.contains("7")) {
                         Intent intent = new Intent(getActivity(),
                                 AddPromotionActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -111,12 +112,14 @@ public class BaseActivity extends AppCompatActivity {
             });
 
             ArrayList<MenuItem> data = new ArrayList<>();
-            data.add(new MenuItem("1", R.drawable.ic_account_white, "Accounts"));
-            data.add(new MenuItem("2", R.drawable.ic_event_white_24dp, "Event"));
-            data.add(new MenuItem("3", R.drawable.ic_arrow_forward_white, "Tickets"));
-            data.add(new MenuItem("4", R.drawable.ic_location_on_white, "Venues"));
-            data.add(new MenuItem("5", R.drawable.ic_local_post_office_24dp, "Promotions"));
-            data.add(new MenuItem("6", R.drawable.ic_help_white_24dp, "Help"));
+            data.add(new MenuItem("1", R.drawable.ic_account_white, "Home"));
+            data.add(new MenuItem("2", R.drawable.ic_account_white, "Accounts"));
+            data.add(new MenuItem("3", R.drawable.ic_arrow_forward_white, "My Tickets"));
+            data.add(new MenuItem("4", R.drawable.ic_event_white_24dp, "Events"));
+            data.add(new MenuItem("5", R.drawable.ic_location_on_white, "Venues"));
+            data.add(new MenuItem("6", R.drawable.ic_location_on_white, "Manage Tickets"));
+            data.add(new MenuItem("7", R.drawable.ic_local_post_office_24dp, "Promotions"));
+            data.add(new MenuItem("8", R.drawable.ic_help_white_24dp, "Help"));
 
             mAdapter.addAll(data);
 
@@ -125,6 +128,9 @@ public class BaseActivity extends AppCompatActivity {
                     .withActivity(this).withCloseOnClick(true).withSelectedItemByPosition(-1)
 //                .withHeader(R.layout.side_menu)
                     .withCustomView(customSideMenu)
+//                    .withStickyFooter(drawerFooterView)
+//                    .withStickyFooterShadow(false)
+//                    .withStickyFooterDivider(true)
                     .build();
 
 

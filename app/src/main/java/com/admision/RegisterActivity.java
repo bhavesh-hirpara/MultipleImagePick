@@ -1,9 +1,12 @@
 package com.admision;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.AppCompatEditText;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.admision.utils.Utils;
@@ -35,8 +38,8 @@ public class RegisterActivity extends BaseActivity {
     @BindView(R.id.editConfPassword)
     AppCompatEditText editConfPassword;
 
-//    @BindView(R.id.tvCreateAccount)
-//    TextView tvCreateAccount;
+    @BindView(R.id.tvLoginHereClick)
+    TextView tvLoginHereClick;
 
 //    @BindView(R.id.tvForgotPass)
 //    TextView tvForgotPass;
@@ -55,7 +58,13 @@ public class RegisterActivity extends BaseActivity {
 
     private void init() {
 //        initImageLoader();
-
+        tvLoginHereClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     ImageLoader imageLoader;

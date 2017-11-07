@@ -142,6 +142,36 @@
                     android:text="REGISTER"
                     android:textColor="@color/white" />
 
+                <com.common.view.CTextView
+                    style="@style/txt_666_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Already an existing user?"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.common.view.CTextView
+                        android:id="@+id/tvLoginHereClick"
+                        style="@style/txt_theme_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/click_here" />
+
+                    <com.common.view.CTextView
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" to login." />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

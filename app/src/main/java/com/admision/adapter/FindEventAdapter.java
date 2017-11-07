@@ -100,19 +100,19 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
 //        holder.tvTime.setText(Utils.nullSafe("" + item.time));
 //        holder.tvLable.setText(Utils.nullSafe("" + item.lable));
 //        holder.mSwitch.setChecked(data.get(position).isOn);
-        holder.btnViewDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mEventlistener != null) {
-                    mEventlistener.OnItemViewclick(position, view);
-                }
-            }
-        });
+//        holder.btnViewDetails.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (mEventlistener != null) {
+//                    mEventlistener.OnItemViewclick(position, view);
+//                }
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 10;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
