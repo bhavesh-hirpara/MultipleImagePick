@@ -49,7 +49,6 @@ public class SplashActivity extends BaseActivity {
         } else {
             handler.post(mPostInternetConDialog);
         }
-
     }
 
     private void startApplication(long sleepTime) {

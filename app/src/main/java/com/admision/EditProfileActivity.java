@@ -2,69 +2,70 @@ package com.admision;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-import com.admision.adapter.TicketsAdapter;
+import com.admision.objects.LoginRes;
 import com.admision.utils.AsyncHttpRequest;
 import com.admision.utils.AsyncResponseHandler;
 import com.admision.utils.Debug;
 import com.admision.utils.RequestParamsUtils;
 import com.admision.utils.URLs;
 import com.admision.utils.Utils;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
-import okhttp3.HttpUrl;
+import okhttp3.FormBody;
 
-public class TicketsActivity extends BaseActivity {
+public class EditProfileActivity extends BaseActivity {
 
-    @BindView(R.id.mTicketRecyclerView)
-    RecyclerView mTicketRecyclerView;
-    RecyclerView.LayoutManager layoutManager;
-    TicketsAdapter mTicketsAdapter;
+    @BindView(R.id.btnUpdateProfile)
+    Button btnUpdateProfile;
 
     @BindView(R.id.tvBackArrow)
     TextView tvBackArrow;
 
+    @BindView(R.id.editFirstName)
+    EditText editFirstName;
+    @BindView(R.id.editLastName)
+    EditText editLastName;
+    @BindView(R.id.editEmailId)
+    EditText editEmailId;
+    @BindView(R.id.editPhoneNumber)
+    EditText editPhoneNumber;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tickets);
+        setContentView(R.layout.activity_edit_profile);
         ButterKnife.bind(this);
 
-//        initDrawer();
+        initDrawer(true);
         init();
     }
 
     private void init() {
         initImageLoader();
 
-        layoutManager = new LinearLayoutManager(this);
-        mTicketRecyclerView.setLayoutManager(layoutManager);
-        mTicketsAdapter = new TicketsAdapter(this);
-        mTicketRecyclerView.setAdapter(mTicketsAdapter);
-
         tvBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TicketsActivity.super.onBackPressed();
+                EditProfileActivity.super.onBackPressed();
             }
         });
 
-//        mTicketsAdapter.setmEventlistener(new TicketsAdapter.Eventlistener() {
-//            @Override
-//            public void OnItemViewclick(int position, View view) {
-////                Debug.e("View Details", "" + mAdapter.getItem(position).ID);
-////                String id = mAdapter.getItem(position).ID;
-////                Intent intent = new Intent(getActivity(),TicketsActivity.class);
-////                startActivity(intent);
-//            }
-//        });
+        btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                setEditProfileData();
+            }
+        });
 
     }
 
@@ -93,22 +94,27 @@ public class TicketsActivity extends BaseActivity {
         return true;
     }
 
-    public void getTicketsData() {
+    public void setEditProfileData() {
         try {
             showDialog("");
 
-            HttpUrl.Builder body = RequestParamsUtils.newRequestUrlBuilder(getActivity(), URLs.GET_CHALLAN());
-            Call call = AsyncHttpRequest.newRequestGet(getActivity(), body.build().toString());
-            call.enqueue(new GetTicketsDataHandler(getActivity()));
+            FormBody.Builder body = RequestParamsUtils.newRequestFormBody(getActivity());
+//            body.addEncoded(RequestParamsUtils.FORGOT_PASSWORD, editForgotEmail.getText().toString());
+            Call call = AsyncHttpRequest.newRequestPost(getActivity(), body.build(), URLs.GET_CHALLAN());
+            call.enqueue(new GetChangePasswordDataHandle(getActivity()));
+
+            for (int i = 0; i < body.build().size(); i++) {
+                Debug.e("setEditProfileData :- ", "" + body.build().name(i) + " = " + body.build().value(i));
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private class GetTicketsDataHandler extends AsyncResponseHandler {
+    private class GetChangePasswordDataHandle extends AsyncResponseHandler {
 
-        public GetTicketsDataHandler(Activity context) {
+        public GetChangePasswordDataHandle(Activity context) {
             super(context);
         }
 
@@ -129,20 +135,16 @@ public class TicketsActivity extends BaseActivity {
         public void onSuccess(String response) {
 
             try {
-                Debug.e("", "getTicketsData# " + response);
-                if (response != null && response.length() > 0) {
+                Debug.e("", "setEditProfileData# " + response);
 
-//                    final SymptomTrackRes symptomTrackRes = new Gson().fromJson(response, new TypeToken<SymptomTrackRes>() {
-//                    }.getType());
+                LoginRes res = new Gson().fromJson(response, new TypeToken<LoginRes>() {
+                }.getType());
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-
-//                            symAdapter.addAll(symptomTrackRes.symptoms);
-                        }
-                    });
-                }
+//                if (res.status == 1) {
+//                    showToast(res.message, Toast.LENGTH_SHORT);
+//                } else {
+//                    showToast(res.message, Toast.LENGTH_SHORT);
+//                }
             } catch (Exception e) {
                 e.printStackTrace();
             }

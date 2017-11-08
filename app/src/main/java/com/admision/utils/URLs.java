@@ -2,7 +2,6 @@ package com.admision.utils;
 
 public class URLs {
 
-
     private static String MAIN_URL = "http://kartum.in/apis";
 
     public static String GET_CHALLAN() {

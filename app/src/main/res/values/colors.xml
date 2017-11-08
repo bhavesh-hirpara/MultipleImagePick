@@ -18,7 +18,7 @@
 
     <color name="primary">#a00592</color>
     <color name="primaryDark">#460c89</color>
-    <color name="accent">#23b9c2</color>
+    <color name="accent">#a00592</color>
 
     <color name="theme_light">#189809e5</color>
     <color name="login_bg">#efefef</color>

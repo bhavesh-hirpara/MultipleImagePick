@@ -27,4 +27,6 @@
 
     </LinearLayout>
 
+    <include layout="@layout/nav_footer_view" />
+
 </LinearLayout>

@@ -20,9 +20,14 @@ import android.widget.Toast;
 
 import com.admision.adapter.SideMenuAdapter;
 import com.admision.objects.MenuItem;
+import com.admision.utils.AsyncHttpRequest;
 import com.admision.utils.AsyncProgressDialog;
+import com.admision.utils.AsyncResponseHandler;
 import com.admision.utils.Constant;
 import com.admision.utils.Debug;
+import com.admision.utils.RequestParamsUtils;
+import com.admision.utils.URLs;
+import com.admision.utils.Utils;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.common.view.SimpleListDividerDecorator;
@@ -32,11 +37,12 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 
+import okhttp3.Call;
+import okhttp3.RequestBody;
+
 
 public class BaseActivity extends AppCompatActivity {
     AsyncProgressDialog ad;
-
-    ArrayList<MenuItem> menuItems;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,7 +63,6 @@ public class BaseActivity extends AppCompatActivity {
     Drawer result;
 
     public void initDrawer(final boolean b) {
-
 //        View v = (View) findViewById(R.id.container);
 
         if (b) {
@@ -65,6 +70,10 @@ public class BaseActivity extends AppCompatActivity {
 //            ViewGroup drawerFooterView = (ViewGroup) getLayoutInflater().inflate(R.layout.side_menu, null, false);
 
             RecyclerView mRecyclerView = (RecyclerView) customSideMenu.findViewById(R.id.mRecyclerView);
+            View navHeader = (View) customSideMenu.findViewById(R.id.navHeader);
+//            TextView tvUserName = (TextView) navHeader.findViewById(R.id.tv);
+
+            View navFooterView = (View) customSideMenu.findViewById(R.id.navFooterView);
             RecyclerView.LayoutManager layoutManager;
             final SideMenuAdapter mAdapter;
 
@@ -76,6 +85,14 @@ public class BaseActivity extends AppCompatActivity {
             mRecyclerView.addItemDecoration(new SimpleListDividerDecorator(getResources().getDrawable(R.drawable.list_divider), true));
             mAdapter = new SideMenuAdapter(this);
             mRecyclerView.setAdapter(mAdapter);
+
+            navFooterView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+//                    Intent intent = new Intent(getApplicationContext(), TicketsActivity.class);
+//                    startActivity(intent);
+                }
+            });
 
             mAdapter.setmEventlistener(new SideMenuAdapter.Eventlistener() {
                 @Override
@@ -99,15 +116,16 @@ public class BaseActivity extends AppCompatActivity {
                         startActivity(intent);
                         hideMenu(false);
                         finishActivity();
-                    } else if (id.contains("7")) {
-                        Intent intent = new Intent(getActivity(),
-                                AddPromotionActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                        startActivity(intent);
-                        hideMenu(false);
-                        finishActivity();
                     }
+//                    else if (id.contains("7")) {
+//                        Intent intent = new Intent(getActivity(),
+//                                AddPromotionActivity.class);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+//                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//                        startActivity(intent);
+//                        hideMenu(false);
+//                        finishActivity();
+//                    }
                 }
             });
 
@@ -118,8 +136,8 @@ public class BaseActivity extends AppCompatActivity {
             data.add(new MenuItem("4", R.drawable.ic_event_white_24dp, "Events"));
             data.add(new MenuItem("5", R.drawable.ic_location_on_white, "Venues"));
             data.add(new MenuItem("6", R.drawable.ic_location_on_white, "Manage Tickets"));
-            data.add(new MenuItem("7", R.drawable.ic_local_post_office_24dp, "Promotions"));
-            data.add(new MenuItem("8", R.drawable.ic_help_white_24dp, "Help"));
+//            data.add(new MenuItem("7", R.drawable.ic_local_post_office_24dp, "Promotions"));
+//            data.add(new MenuItem("8", R.drawable.ic_help_white_24dp, "Help"));
 
             mAdapter.addAll(data);
 
@@ -132,7 +150,6 @@ public class BaseActivity extends AppCompatActivity {
 //                    .withStickyFooterShadow(false)
 //                    .withStickyFooterDivider(true)
                     .build();
-
 
             ImageView imgMenu = (ImageView) findViewById(R.id.imgMenu);
             if (imgMenu != null) {
@@ -173,7 +190,14 @@ public class BaseActivity extends AppCompatActivity {
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(MaterialDialog materialDialog, DialogAction dialogAction) {
+                        logout();
                         showToast("Logged Out", Toast.LENGTH_SHORT);
+//                        LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(new Intent(Constant.FINISH_ACTIVITY));
+                        Utils.clearLoginCredetials(getActivity());
+
+                        Intent i = new Intent(getActivity(), LoginActivity.class);
+                        startActivity(i);
+                        finish();
                     }
                 }).onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
@@ -336,5 +360,32 @@ public class BaseActivity extends AppCompatActivity {
         void onMasterDataLoad();
     }
 
+    public void logout() {
+        try {
 
+            RequestBody body = RequestParamsUtils.newRequestBody(getActivity(), "");
+            Call call = AsyncHttpRequest.newRequestDelete(getActivity(), body, URLs.GET_CHALLAN());
+            call.enqueue(new AsyncResponseHandler(getActivity()) {
+                @Override
+                public void onStart() {
+                }
+
+                @Override
+                public void onSuccess(String content) {
+                }
+
+                @Override
+                public void onFinish() {
+                }
+
+                @Override
+                public void onFailure(Throwable e, String content) {
+
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

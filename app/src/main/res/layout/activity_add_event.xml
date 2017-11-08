@@ -54,9 +54,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="30dp"
             android:gravity="center"
             android:orientation="vertical">
+
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Select Venue" />
 
             <com.common.view.CTextView
                 android:id="@+id/tvSelectVenue"
@@ -66,88 +73,192 @@
                 android:background="@drawable/squere_edittext"
                 android:drawableRight="@drawable/ic_arrow_down_black"
                 android:gravity="start|center_vertical"
-                android:hint="Select Venue"
+                android:hint="Select"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:singleLine="true" />
 
-            <com.common.view.CEditTextView
-                android:id="@+id/editCapcity"
-                style="@style/txt_333_16"
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/squere_edittext"
-                android:hint="Capcity"
-                android:maxLines="1"
-                android:padding="10dp"
                 android:singleLine="true"
-                android:textCursorDrawable="@null" />
+                android:text="OR"
+                android:textAlignment="center" />
+
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Add Address" />
 
             <com.common.view.CEditTextView
-                android:id="@+id/editStartDate"
+                android:id="@+id/editAddress"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:background="@drawable/squere_edittext"
-                android:hint="@string/start_date_time"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editName"
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/squere_edittext"
-                android:hint="Name"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:singleLine="true"
                 android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
-                android:id="@+id/tvAvailableTickets"
-                style="@style/txt_333_16"
+                style="@style/txt_666_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Name" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editName"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/squere_edittext"
-                android:drawableRight="@drawable/ic_arrow_down_black"
-                android:gravity="start|center_vertical"
-                android:hint="Available Tickets"
                 android:maxLines="1"
                 android:padding="10dp"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="@string/start_date_time" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editStartDate"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="@string/end_date_time" />
 
             <com.common.view.CEditTextView
                 android:id="@+id/editEndDateTime"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:background="@drawable/squere_edittext"
-                android:hint="@string/end_date_time"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:singleLine="true"
                 android:textCursorDrawable="@null" />
 
-            <com.common.view.CEditTextView
-                android:id="@+id/editPrice"
-                style="@style/txt_333_16"
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Available Tickets" />
+
+            <com.common.view.CTextView
+                android:id="@+id/tvAvailableTickets"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/squere_edittext"
-                android:hint="Price"
+                android:drawableRight="@drawable/ic_arrow_down_black"
+                android:gravity="start|center_vertical"
+                android:hint="Select"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true" />
+
+            <com.common.view.CTextView
+                style="@style/txt_000_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Event Mode" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radioEventMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioPrivate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Private" />
+
+                    <RadioButton
+                        android:id="@+id/radioPublic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Public" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Rate" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editRate"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Description" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editDescription"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/squere_edittext"
+                android:clickable="true"
+                android:gravity="top"
+                android:padding="10dp"
                 android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
@@ -156,45 +267,129 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="start|center_vertical"
-                android:hint="Event Mode"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:text="Event Status" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/rbPrivate"
-                    style="@style/txt_666_16"
+                <RadioGroup
+                    android:id="@+id/radioEventStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Private" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/rbPublic"
-                    style="@style/txt_666_16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Public" />
+                    <RadioButton
+                        android:id="@+id/radioApprove"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Approve" />
+
+                    <RadioButton
+                        android:id="@+id/radioReject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Reject" />
+
+                </RadioGroup>
 
             </LinearLayout>
 
-            <com.common.view.CEditTextView
-                android:id="@+id/editDescription"
+            <com.common.view.CTextView
+                style="@style/txt_666_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Image" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <com.common.view.CTextView
+                    style="@style/txt_theme_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center|right"
+                    android:singleLine="true"
+                    android:text="Browese" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.common.view.CEditTextView
+                        android:id="@+id/editBrowese"
+                        style="@style/txt_333_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/squere_edittext"
+                        android:clickable="true"
+                        android:gravity="top"
+                        android:padding="10dp"
+                        android:textCursorDrawable="@null" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <com.common.view.CTextView
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/squere_edittext"
-                android:clickable="true"
-                android:gravity="top"
-                android:hint="Description"
-                android:padding="10dp"
-                android:textCursorDrawable="@null" />
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Age Requirement" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radioAgeRequirement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioAge18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="18" />
+
+                    <RadioButton
+                        android:id="@+id/radioAge21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="21" />
+
+                    <RadioButton
+                        android:id="@+id/radioNoteRequired"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Note Required" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

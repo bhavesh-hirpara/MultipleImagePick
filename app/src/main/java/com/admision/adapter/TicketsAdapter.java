@@ -105,6 +105,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.MyViewHo
 //                }
 //            }
 //        });
+
     }
 
     @Override

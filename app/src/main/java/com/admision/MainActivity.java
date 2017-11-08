@@ -1,15 +1,23 @@
 package com.admision;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.admision.adapter.FindEventAdapter;
+import com.admision.utils.AsyncHttpRequest;
+import com.admision.utils.AsyncResponseHandler;
+import com.admision.utils.Debug;
 import com.admision.utils.ExitStrategy;
+import com.admision.utils.RequestParamsUtils;
+import com.admision.utils.URLs;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.HttpUrl;
 
 public class MainActivity extends com.admision.BaseActivity {
 
@@ -53,6 +61,68 @@ public class MainActivity extends com.admision.BaseActivity {
 //        });
     }
 
+    public void getEventData() {
+        try {
+            showDialog("");
+
+            HttpUrl.Builder body = RequestParamsUtils.newRequestUrlBuilder(getActivity(), URLs.GET_CHALLAN());
+            Call call = AsyncHttpRequest.newRequestGet(getActivity(), body.build().toString());
+            call.enqueue(new GetEventDataHandler(getActivity()));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private class GetEventDataHandler extends AsyncResponseHandler {
+
+        public GetEventDataHandler(Activity context) {
+            super(context);
+        }
+
+        @Override
+        public void onStart() {
+        }
+
+        @Override
+        public void onFinish() {
+            try {
+                dismissDialog();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onSuccess(String response) {
+
+            try {
+                Debug.e("", "getEventData# " + response);
+                if (response != null && response.length() > 0) {
+
+//                    final SymptomTrackRes symptomTrackRes = new Gson().fromJson(response, new TypeToken<SymptomTrackRes>() {
+//                    }.getType());
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+//                            symAdapter.addAll(symptomTrackRes.symptoms);
+                        }
+                    });
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onFailure(Throwable e, String content) {
+            Debug.e("", "getEventData# " + content);
+            dismissDialog();
+        }
+    }
+
     @Override
     public void onBackPressed() {
 
@@ -71,6 +141,5 @@ public class MainActivity extends com.admision.BaseActivity {
         } catch (Exception e) {
 
         }
-
     }
 }
