@@ -71,7 +71,8 @@ public class BaseActivity extends AppCompatActivity {
 
             RecyclerView mRecyclerView = (RecyclerView) customSideMenu.findViewById(R.id.mRecyclerView);
             View navHeader = (View) customSideMenu.findViewById(R.id.navHeader);
-//            TextView tvUserName = (TextView) navHeader.findViewById(R.id.tv);
+            TextView tvUserName = (TextView) navHeader.findViewById(R.id.tvUserName);
+            TextView tvEditProfile = (TextView) navHeader.findViewById(R.id.tvEditProfile);
 
             View navFooterView = (View) customSideMenu.findViewById(R.id.navFooterView);
             RecyclerView.LayoutManager layoutManager;
@@ -86,11 +87,25 @@ public class BaseActivity extends AppCompatActivity {
             mAdapter = new SideMenuAdapter(this);
             mRecyclerView.setAdapter(mAdapter);
 
+            tvEditProfile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    hideMenu(false);
+                    finishActivity();
+                }
+            });
+
             navFooterView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Intent intent = new Intent(getApplicationContext(), TicketsActivity.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(getActivity(), SignupVenueAndPromoterActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    hideMenu(false);
+                    finishActivity();
                 }
             });
 
@@ -116,16 +131,15 @@ public class BaseActivity extends AppCompatActivity {
                         startActivity(intent);
                         hideMenu(false);
                         finishActivity();
+                    } else if (id.contains("7")) {
+                        Intent intent = new Intent(getActivity(),
+                                ManageVenuesActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent);
+                        hideMenu(false);
+                        finishActivity();
                     }
-//                    else if (id.contains("7")) {
-//                        Intent intent = new Intent(getActivity(),
-//                                AddPromotionActivity.class);
-//                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-//                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-//                        startActivity(intent);
-//                        hideMenu(false);
-//                        finishActivity();
-//                    }
                 }
             });
 
@@ -136,7 +150,7 @@ public class BaseActivity extends AppCompatActivity {
             data.add(new MenuItem("4", R.drawable.ic_event_white_24dp, "Events"));
             data.add(new MenuItem("5", R.drawable.ic_location_on_white, "Venues"));
             data.add(new MenuItem("6", R.drawable.ic_location_on_white, "Manage Tickets"));
-//            data.add(new MenuItem("7", R.drawable.ic_local_post_office_24dp, "Promotions"));
+            data.add(new MenuItem("7", R.drawable.ic_local_post_office_24dp, "Manage Venues"));
 //            data.add(new MenuItem("8", R.drawable.ic_help_white_24dp, "Help"));
 
             mAdapter.addAll(data);

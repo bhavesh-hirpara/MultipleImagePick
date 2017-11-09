@@ -20,6 +20,9 @@
     <color name="primaryDark">#460c89</color>
     <color name="accent">#a00592</color>
 
+    <color name="theme_light_">#f3f3f3</color>
+    <color name="theme_light__">#f9f9f9</color>
+
     <color name="theme_light">#189809e5</color>
     <color name="login_bg">#efefef</color>
     <color name="tb_devider_color">#FF3A302A</color>

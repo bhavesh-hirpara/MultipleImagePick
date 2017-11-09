@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="EDIT PROFILE"
+            android:text="REGISTER AS VENUE OWNER"
             android:textAlignment="center" />
 
         <com.common.view.CTextView
@@ -54,66 +54,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="30dp"
             android:gravity="center"
             android:orientation="vertical">
-
-            <com.common.view.CTextView
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="First Name" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editFirstName"
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
-
-            <com.common.view.CTextView
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="Last Name" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editLastName"
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
-
-            <com.common.view.CTextView
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="Email Id" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editEmailId"
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
                 style="@style/txt_333_16"
@@ -134,23 +76,25 @@
                 android:singleLine="true"
                 android:textCursorDrawable="@null" />
 
-            <com.common.view.CBButtonViewM
-                android:id="@+id/btnUpdateProfile"
-                style="@style/LightFlatWaveColorButtonRippleStyle_"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/btn_bg_accept"
-                android:text="UPDATE PROFILE"
-                android:textColor="@color/white" />
-
-
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <com.common.view.CBButtonViewM
+            android:id="@+id/btnRegister"
+            style="@style/LightFlatWaveColorButtonRippleStyle_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg_accept"
+            android:text="REGISTER"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

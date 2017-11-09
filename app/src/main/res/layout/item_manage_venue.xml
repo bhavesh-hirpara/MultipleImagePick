@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" ?><!--android.support.v7.widget.CardView-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:clickable="true"
+    android:padding="5dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardMaxElevation="3dp"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_light_"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvName"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Deo" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capcity : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvCapcity"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_light__"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address 1 : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvAddress1"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Norfolk, VA" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address 2 : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvAddress2"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Norfolk, VA" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_light_"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="State : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvState"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Norfolk" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvCity"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="York" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zipcode : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvZipcode"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23510" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hours of operation : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvHoursOfOperation"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="03:25" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvStatus"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitude : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvLatitude"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13.253648" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.common.view.CBTextView
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitude : " />
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvLogitude"
+                style="@style/txt_000_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-73.256847" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llEdit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/primary"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvEdit"
+                style="@style/txt_fff_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_edit_24dp"
+                android:drawablePadding="5dp"
+                android:gravity="start|center_vertical"
+                android:text="Edit" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDelete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/primary_dark"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvDelete"
+                style="@style/txt_fff_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_cancel_red_24dp"
+                android:drawablePadding="5dp"
+                android:gravity="start|center_vertical"
+                android:text="Delete" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

@@ -25,34 +25,20 @@ import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.FormBody;
 
-public class AddEventActivity extends BaseActivity {
+public class SeaechEventActivity extends BaseActivity {
 
-    @BindView(R.id.btnSave)
-    Button btnSave;
+    @BindView(R.id.btnSearch)
+    Button btnSearch;
 
-    @BindView(R.id.editAddress)
-    EditText editAddress;
+    @BindView(R.id.editEventName)
+    EditText editEventName;
     @BindView(R.id.editStartDate)
     EditText editStartDate;
-    @BindView(R.id.editName)
-    EditText editName;
     @BindView(R.id.editEndDateTime)
     EditText editEndDateTime;
-    @BindView(R.id.editRate)
-    EditText editRate;
-    @BindView(R.id.editDescription)
-    EditText editDescription;
-//    @BindView(R.id.editBrowese)
-//    EditText editBrowese;
 
-    @BindView(R.id.tvSelectVenue)
-    TextView tvSelectVenue;
     @BindView(R.id.tvBackArrow)
     TextView tvBackArrow;
-    @BindView(R.id.tvAvailableTickets)
-    TextView tvAvailableTickets;
-    @BindView(R.id.tvBrowese)
-    TextView tvBrowese;
 
     @BindView(R.id.radioEventMode)
     RadioGroup radioEventMode;
@@ -60,6 +46,8 @@ public class AddEventActivity extends BaseActivity {
     RadioButton radioPrivate;
     @BindView(R.id.radioPublic)
     RadioButton radioPublic;
+    @BindView(R.id.radioAll)
+    RadioButton radioAll;
 
     @BindView(R.id.radioEventStatus)
     RadioGroup radioEventStatus;
@@ -68,19 +56,10 @@ public class AddEventActivity extends BaseActivity {
     @BindView(R.id.radioReject)
     RadioButton radioReject;
 
-    @BindView(R.id.radioAgeRequirement)
-    RadioGroup radioAgeRequirement;
-    @BindView(R.id.radioAge18)
-    RadioButton radioAge18;
-    @BindView(R.id.radioAge21)
-    RadioButton radioAge21;
-    @BindView(R.id.radioNoteRequired)
-    RadioButton radioNoteRequired;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_event);
+        setContentView(R.layout.activity_search_event);
         ButterKnife.bind(this);
 
         initDrawer(true);
@@ -93,11 +72,11 @@ public class AddEventActivity extends BaseActivity {
         tvBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddEventActivity.super.onBackPressed();
+                SeaechEventActivity.super.onBackPressed();
             }
         });
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                setAddEvente();
@@ -129,7 +108,7 @@ public class AddEventActivity extends BaseActivity {
         return true;
     }
 
-    public void setAddEvente() {
+    public void searchEvent() {
         try {
             showDialog("");
 
@@ -139,7 +118,7 @@ public class AddEventActivity extends BaseActivity {
             call.enqueue(new GetEventeDataHandle(getActivity()));
 
             for (int i = 0; i < body.build().size(); i++) {
-                Debug.e("setAddEvente :- ", "" + body.build().name(i) + " = " + body.build().value(i));
+                Debug.e("searchEvent :- ", "" + body.build().name(i) + " = " + body.build().value(i));
             }
 
         } catch (Exception e) {
@@ -170,7 +149,7 @@ public class AddEventActivity extends BaseActivity {
         public void onSuccess(String response) {
 
             try {
-                Debug.e("", "setAddEvente# " + response);
+                Debug.e("", "searchEvent# " + response);
 
                 LoginRes res = new Gson().fromJson(response, new TypeToken<LoginRes>() {
                 }.getType());

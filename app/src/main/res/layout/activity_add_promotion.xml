@@ -155,14 +155,14 @@
                 android:textCursorDrawable="@null" />
 
             <com.common.view.CBButtonViewM
-                android:id="@+id/btnSave"
+                android:id="@+id/btnSearch"
                 style="@style/LightFlatWaveColorButtonRippleStyle_"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/btn_bg_accept"
-                android:text="SAVE"
+                android:text="SEARCH"
                 android:textColor="@color/white" />
 
         </LinearLayout>

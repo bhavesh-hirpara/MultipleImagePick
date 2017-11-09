@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="ADD EVENT"
+            android:text="EDIT VENUE"
             android:textAlignment="center" />
 
         <com.common.view.CTextView
@@ -58,15 +58,111 @@
             android:orientation="vertical">
 
             <com.common.view.CTextView
-                style="@style/txt_666_16"
+                style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="Select Venue" />
+                android:text="Vanue Name" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editVanueName"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
-                android:id="@+id/tvSelectVenue"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Company Name" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editCompanyName"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Company Type" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editCompanyType"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Add Address 1" />
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editAddAddress1"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Add Address 2" />
+
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editAddAddress2"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
+
+            <com.common.view.CTextView
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="State" />
+
+            <com.common.view.CTextView
+                android:id="@+id/tvState"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,100 +175,15 @@
                 android:singleLine="true" />
 
             <com.common.view.CTextView
-                style="@style/txt_666_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="OR"
-                android:textAlignment="center" />
-
-            <com.common.view.CTextView
-                style="@style/txt_666_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="Add Address" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editAddress"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
-
-            <com.common.view.CTextView
-                style="@style/txt_666_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="Name" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editName"
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
+                android:text="City" />
 
             <com.common.view.CTextView
-                style="@style/txt_666_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="@string/start_date_time" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editStartDate"
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
-
-            <com.common.view.CTextView
-                style="@style/txt_666_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="@string/end_date_time" />
-
-            <com.common.view.CEditTextView
-                android:id="@+id/editEndDateTime"
-                style="@style/txt_333_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textCursorDrawable="@null" />
-
-            <com.common.view.CTextView
-                style="@style/txt_666_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="Available Tickets" />
-
-            <com.common.view.CTextView
-                android:id="@+id/tvAvailableTickets"
+                android:id="@+id/tvCity"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -185,54 +196,16 @@
                 android:singleLine="true" />
 
             <com.common.view.CTextView
-                style="@style/txt_000_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="start|center_vertical"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text="Event Mode" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/radioEventMode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/radioPrivate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="Private" />
-
-                    <RadioButton
-                        android:id="@+id/radioPublic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Public" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <com.common.view.CTextView
-                style="@style/txt_666_16"
+                style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="Rate" />
+                android:text="Zipcode" />
+
 
             <com.common.view.CEditTextView
-                android:id="@+id/editRate"
+                android:id="@+id/editZipcode"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -243,104 +216,85 @@
                 android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
-                style="@style/txt_666_16"
+                style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="Description" />
+                android:text="Latitude" />
+
 
             <com.common.view.CEditTextView
-                android:id="@+id/editDescription"
+                android:id="@+id/editLatitude"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/squere_edittext"
-                android:clickable="true"
-                android:gravity="top"
+                android:maxLines="1"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
-                style="@style/txt_000_16"
+                style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:gravity="start|center_vertical"
-                android:maxLines="1"
                 android:singleLine="true"
-                android:text="Event Status" />
+                android:text="Longitude" />
 
-            <LinearLayout
+
+            <com.common.view.CEditTextView
+                android:id="@+id/editLongitude"
+                style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/radioEventStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/radioApprove"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="Approve" />
-
-                    <RadioButton
-                        android:id="@+id/radioReject"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Reject" />
-
-                </RadioGroup>
-
-            </LinearLayout>
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
-                style="@style/txt_666_16"
+                style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="Image" />
+                android:text="Capcity" />
 
-            <FrameLayout
+            <com.common.view.CTextView
+                android:id="@+id/tvCapcity"
+                style="@style/txt_333_16"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center">
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:drawableRight="@drawable/ic_arrow_down_black"
+                android:gravity="start|center_vertical"
+                android:hint="Select"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true" />
 
-                <com.common.view.CTextView
-                    style="@style/txt_theme_16"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center|right"
-                    android:singleLine="true"
-                    android:text="Browese" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <com.common.view.CTextView
-                        android:id="@+id/tvBrowese"
-                        style="@style/txt_333_16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/squere_edittext"
-                        android:maxLines="1"
-                        android:padding="10dp"
-                        android:singleLine="true" />
-
-                </LinearLayout>
+            <com.common.view.CTextView
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:text="Hours of operation" />
 
 
-            </FrameLayout>
+            <com.common.view.CEditTextView
+                android:id="@+id/editHoursOfPeration"
+                style="@style/txt_333_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/squere_edittext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null" />
 
             <com.common.view.CTextView
                 style="@style/txt_333_16"
@@ -350,7 +304,7 @@
                 android:gravity="start|center_vertical"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="Age Requirement" />
+                android:text="Status" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -359,31 +313,24 @@
                 android:orientation="horizontal">
 
                 <RadioGroup
-                    android:id="@+id/radioAgeRequirement"
+                    android:id="@+id/radioStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioAge18"
+                        android:id="@+id/radioActive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="18" />
+                        android:text="Active" />
 
                     <RadioButton
-                        android:id="@+id/radioAge21"
+                        android:id="@+id/radioInactive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="21" />
-
-                    <RadioButton
-                        android:id="@+id/radioNoteRequired"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Note Required" />
+                        android:text="Inactive" />
 
                 </RadioGroup>
 
@@ -407,7 +354,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_bg_accept"
-            android:text="SAVE"
+            android:text="UPDATE"
             android:textColor="@color/white" />
 
     </LinearLayout>

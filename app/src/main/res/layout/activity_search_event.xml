@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="EDIT PROFILE"
+            android:text="SEARCH EVENT"
             android:textAlignment="center" />
 
         <com.common.view.CTextView
@@ -54,7 +54,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="30dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -64,10 +63,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="First Name" />
+                android:text="Event Name" />
 
             <com.common.view.CEditTextView
-                android:id="@+id/editFirstName"
+                android:id="@+id/editEventName"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,10 +82,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="Last Name" />
+                android:text="@string/start_date_time" />
 
             <com.common.view.CEditTextView
-                android:id="@+id/editLastName"
+                android:id="@+id/editStartDate"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,10 +101,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="Email Id" />
+                android:text="@string/end_date_time" />
 
             <com.common.view.CEditTextView
-                android:id="@+id/editEmailId"
+                android:id="@+id/editEndDateTime"
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,30 +119,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
                 android:singleLine="true"
-                android:text="Phone Number" />
+                android:text="Event Mode" />
 
-            <com.common.view.CEditTextView
-                android:id="@+id/editPhoneNumber"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radioEventMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioPrivate"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Private" />
+
+                    <RadioButton
+                        android:id="@+id/radioPublic"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Public" />
+
+                    <RadioButton
+                        android:id="@+id/radioAll"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="All" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <com.common.view.CTextView
                 style="@style/txt_333_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/squere_edittext"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center_vertical"
                 android:maxLines="1"
-                android:padding="10dp"
                 android:singleLine="true"
-                android:textCursorDrawable="@null" />
+                android:text="Event Status" />
 
-            <com.common.view.CBButtonViewM
-                android:id="@+id/btnUpdateProfile"
-                style="@style/LightFlatWaveColorButtonRippleStyle_"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/btn_bg_accept"
-                android:text="UPDATE PROFILE"
-                android:textColor="@color/white" />
+                android:orientation="horizontal">
 
+                <RadioGroup
+                    android:id="@+id/radioEventStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioApprove"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Approve" />
+
+                    <RadioButton
+                        android:id="@+id/radioReject"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Reject" />
+
+                </RadioGroup>
+
+            </LinearLayout>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
@@ -151,6 +211,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <com.common.view.CBButtonViewM
+            android:id="@+id/btnSave"
+            style="@style/LightFlatWaveColorButtonRippleStyle_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg_accept"
+            android:text="SAVE"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
