@@ -13,7 +13,7 @@
     tools:visibility="visible">
 
     <FrameLayout
-        android:id="@+id/mContainer"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -21,6 +21,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -39,138 +40,151 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg_accept"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-                <FrameLayout
+
+                <com.common.view.CBTextView
+                    android:id="@+id/tvEventName"
+                    style="@style/txt_fff_18"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/btn_bg_accept">
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="Event Name" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                        <com.common.view.CBTextView
-                            android:id="@+id/btnViewTickets"
-                            style="@style/txt_333_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right|center"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_bg_"
-                            android:padding="5dp"
-                            android:text="View tickets" />
-
-                        <com.common.view.CBTextView
-                            android:id="@+id/btnViewDetails"
-                            style="@style/txt_333_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right|center"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/btn_bg_"
-                            android:padding="5dp"
-                            android:text="View Details" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <com.common.view.CBTextView
+                        style="@style/txt_fff_10"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:drawablePadding="5dp"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/age_requirement" />
 
-                        <com.common.view.CBTextView
-                            android:id="@+id/tvEventName"
-                            style="@style/txt_fff_18"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="start|center_vertical"
-                            android:text="Event Name" />
+                    <com.common.view.CBTextView
+                        android:id="@+id/tvAge"
+                        style="@style/txt_fff_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:gravity="start|center_vertical"
+                        android:text="18+" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/gray_light" />
 
-                            <com.common.view.CBTextView
-                                style="@style/txt_fff_10"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableLeft="@drawable/ic_thumb_up_white"
-                                android:drawablePadding="5dp"
-                                android:gravity="start|center_vertical"
-                                android:text="94%" />
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginRight="5dp"
-                                android:background="@color/gray_light" />
-
-                            <com.common.view.CBTextView
-                                style="@style/txt_fff_10"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableLeft="@drawable/ic_location_on_white"
-                                android:drawablePadding="5dp"
-                                android:gravity="start|center_vertical"
-                                android:text="0.7mi - soho" />
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginRight="5dp"
-                                android:background="@color/gray_light" />
-
-                            <com.common.view.CBTextView
-                                style="@style/txt_fff_10"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableLeft="@drawable/ic_attach_money_white_24dp"
-                                android:drawablePadding="1dp"
-                                android:gravity="start|center_vertical"
-                                android:text="0.5.50" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <com.common.view.CBTextView
-                                style="@style/txt_fff_10"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="start|center_vertical"
-                                android:text="Attending? - Yes(1)  No(1)  May be(1)" />
+                    <com.common.view.CBTextView
+                        android:id="@+id/tvLocation"
+                        style="@style/txt_fff_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_location_on_white"
+                        android:drawablePadding="5dp"
+                        android:gravity="start|center_vertical"
+                        android:text="0.7mi - soho" />
 
 
-                            <!--<com.common.view.CBTextView-->
-                            <!--style="@style/txt_fff_10"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_marginLeft="10dp"-->
-                            <!--android:gravity="start|center_vertical"-->
-                            <!--android:text="0.7mi - soho" />-->
+                </LinearLayout>
 
-                        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    </LinearLayout>
+                    <com.common.view.CBTextView
+                        android:id="@+id/tvDate"
+                        style="@style/txt_fff_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_date_"
+                        android:gravity="start|center_vertical"
+                        android:text="Oct - 11" />
 
-                </FrameLayout>
+                    <com.common.view.CBTextView
+                        android:id="@+id/tvDate_"
+                        style="@style/txt_fff_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_date_"
+                        android:gravity="start|center_vertical"
+                        android:text="Oct - 11" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/gray_light" />
+
+                    <com.common.view.CBTextView
+                        style="@style/txt_fff_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="Attending? - Yes(1)  No(1)  May be(1)" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
+            <com.common.view.CBButtonView
+                android:id="@+id/btnViewDetails"
+                style="@style/txt_333_14"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_bg_"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="View Details" />
+
+            <com.common.view.CBButtonView
+                android:id="@+id/tvViewTickets"
+                style="@style/txt_333_14"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_bg_"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/buy_now"
+                android:visibility="gone" />
+
+
+            <com.common.view.CBTextView
+                android:id="@+id/tvFree"
+                style="@style/txt_fff_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:text="Free" />
+
+        </LinearLayout>
     </FrameLayout>
 </LinearLayout>
 

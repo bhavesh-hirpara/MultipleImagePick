@@ -19,7 +19,7 @@
     <string name="btn_ok">OK</string>
     <string name="hint_email">Email Address</string>
     <string name="hint_password">Password</string>
-    <string name="btn_login">LOGIN</string>
+    <string name="btn_buy_now">Buy Now</string>
     <string name="forgot_password"><u>Forgot Password?</u></string>
     <string name="create_account">Create Account</string>
     <string name="or">OR</string>
@@ -147,4 +147,9 @@
     <string name="start_date_time"><![CDATA[Start Date & Time]]></string>
     <string name="end_date_time"><![CDATA[End Date & Time]]></string>
     <string name="click_here"><u>Click here</u></string>
+    <string name="age_requirement">Age Requirement :</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="interested">Interested ?</string>
+    <string name="Advertisement">Advertisement</string>
+    <string name="btn_login">LOGIN</string>
 </resources>

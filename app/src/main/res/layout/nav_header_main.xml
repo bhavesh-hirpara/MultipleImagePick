@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingTop="10dp">
+        android:paddingTop="50dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgUserPhoto"

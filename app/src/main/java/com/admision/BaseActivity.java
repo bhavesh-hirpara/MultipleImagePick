@@ -60,6 +60,17 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+    public void initBack() {
+        ImageView imgBack = (ImageView) findViewById(R.id.imgBack);
+        imgBack.setVisibility(View.VISIBLE);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
+
     Drawer result;
 
     public void initDrawer(final boolean b) {
@@ -117,7 +128,7 @@ public class BaseActivity extends AppCompatActivity {
 
                     if (id.contains("3")) {
                         Intent intent = new Intent(getActivity(),
-                                TicketsActivity.class);
+                                MyTicketActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
                                 | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent);
@@ -144,13 +155,13 @@ public class BaseActivity extends AppCompatActivity {
             });
 
             ArrayList<MenuItem> data = new ArrayList<>();
-            data.add(new MenuItem("1", R.drawable.ic_account_white, "Home"));
+            data.add(new MenuItem("1", R.drawable.ic_home, "Home"));
             data.add(new MenuItem("2", R.drawable.ic_account_white, "Accounts"));
             data.add(new MenuItem("3", R.drawable.ic_arrow_forward_white, "My Tickets"));
             data.add(new MenuItem("4", R.drawable.ic_event_white_24dp, "Events"));
             data.add(new MenuItem("5", R.drawable.ic_location_on_white, "Venues"));
             data.add(new MenuItem("6", R.drawable.ic_location_on_white, "Manage Tickets"));
-            data.add(new MenuItem("7", R.drawable.ic_local_post_office_24dp, "Manage Venues"));
+//            data.add(new MenuItem("7", R.drawable.ic_local_post_office_24dp, "Manage Venues"));
 //            data.add(new MenuItem("8", R.drawable.ic_help_white_24dp, "Help"));
 
             mAdapter.addAll(data);
@@ -166,6 +177,7 @@ public class BaseActivity extends AppCompatActivity {
                     .build();
 
             ImageView imgMenu = (ImageView) findViewById(R.id.imgMenu);
+            imgMenu.setVisibility(View.VISIBLE);
             if (imgMenu != null) {
                 imgMenu.setOnClickListener(new View.OnClickListener() {
                     @Override

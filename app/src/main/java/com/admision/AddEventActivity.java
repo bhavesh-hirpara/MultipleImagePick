@@ -47,8 +47,6 @@ public class AddEventActivity extends BaseActivity {
 
     @BindView(R.id.tvSelectVenue)
     TextView tvSelectVenue;
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
     @BindView(R.id.tvAvailableTickets)
     TextView tvAvailableTickets;
     @BindView(R.id.tvBrowese)
@@ -83,19 +81,15 @@ public class AddEventActivity extends BaseActivity {
         setContentView(R.layout.activity_add_event);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+//        initDrawer(true);
+        initBack();
         init();
     }
 
     private void init() {
-        initImageLoader();
+        setTitleText("ADD EVENTS");
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AddEventActivity.super.onBackPressed();
-            }
-        });
+        initImageLoader();
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override

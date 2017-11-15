@@ -17,7 +17,7 @@
         android:orientation="vertical"
         android:src="@mipmap/logo" />
 
-    <com.common.view.CBButtonViewM
+    <com.common.view.CButtonViewM
         android:id="@+id/btnSignupVenueOwner"
         style="@style/LightFlatWaveColorButtonRippleStyle_"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:text="SIGN UP AS A VENUE OWNER"
         android:textColor="@color/white" />
 
-    <com.common.view.CBButtonViewM
+    <com.common.view.CButtonViewM
         android:id="@+id/btnSignupPromoter"
         style="@style/LightFlatWaveColorButtonRippleStyle_"
         android:layout_width="match_parent"

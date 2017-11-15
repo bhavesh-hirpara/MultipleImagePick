@@ -5,11 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.admision.R;
 import com.admision.utils.Utils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -114,14 +116,16 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-//        @BindView(R.id.imgEvent)
+        //        @BindView(R.id.imgEvent)
 //        ImageView imgEvent;
 //        @BindView(R.id.btnViewDetails)
 //        ImageView btnViewDetails;
 //        @BindView(R.id.tvEventName)
 //        TextView tvEventName;
-//        @BindView(R.id.container)
-//        View container;
+        @BindView(R.id.btnViewDetails)
+        Button btnViewDetails;
+        @BindView(R.id.container)
+        View container;
 
         public MyViewHolder(View view) {
             super(view);
@@ -131,6 +135,7 @@ public class FindEventAdapter extends RecyclerView.Adapter<FindEventAdapter.MyVi
 
     public interface Eventlistener {
         void OnItemViewclick(int position, View view);
+        void OnItemBittonclick(int position);
     }
 
     public void setmEventlistener(Eventlistener eventlistener) {

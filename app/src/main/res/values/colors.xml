@@ -47,7 +47,7 @@
     <drawable name="seprator">#40000000</drawable>
 
     <color name="black_translucent">#30000000</color>
-    <color name="black_translucent_">#70000000</color>
+    <color name="black_translucent_">#cd000000</color>
     <color name="background_tab_pressed">#66414B4D</color>
     <color name="black_semi_transparent">#FFFFFFFF</color>
 
@@ -88,6 +88,7 @@
     <color name="green_avail">#229722</color>
     <color name="blue_avail">#005baa</color>
     <color name="disable">#CDCDCD</color>
+    <color name="pink">#be53b4</color>
 
     <color name="select_transparancy">#e2e2e2</color>
 

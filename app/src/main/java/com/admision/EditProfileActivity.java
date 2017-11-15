@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.admision.objects.LoginRes;
 import com.admision.utils.AsyncHttpRequest;
@@ -27,9 +26,9 @@ public class EditProfileActivity extends BaseActivity {
 
     @BindView(R.id.btnUpdateProfile)
     Button btnUpdateProfile;
-
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
 
     @BindView(R.id.editFirstName)
     EditText editFirstName;
@@ -46,19 +45,21 @@ public class EditProfileActivity extends BaseActivity {
         setContentView(R.layout.activity_edit_profile);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+//        initDrawer(true);
+        initBack();
         init();
     }
 
     private void init() {
+        setTitleText("EDIT PROFILE");
         initImageLoader();
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditProfileActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                EditProfileActivity.super.onBackPressed();
+//            }
+//        });
 
         btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override

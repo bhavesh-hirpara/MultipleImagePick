@@ -47,8 +47,8 @@ public class EditVenueActivity extends BaseActivity {
     @BindView(R.id.editHoursOfPeration)
     EditText editHoursOfPeration;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
     @BindView(R.id.tvState)
     TextView tvState;
     @BindView(R.id.tvCity)
@@ -69,18 +69,20 @@ public class EditVenueActivity extends BaseActivity {
         setContentView(R.layout.activity_edit_venue);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+        initBack();
+//        initDrawer(true);
         init();
     }
 
     private void init() {
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditVenueActivity.super.onBackPressed();
-            }
-        });
+
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                EditVenueActivity.super.onBackPressed();
+//            }
+//        });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override

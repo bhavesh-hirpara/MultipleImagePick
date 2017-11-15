@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.admision.adapter.FindEventAdapter;
@@ -19,7 +20,7 @@ import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.HttpUrl;
 
-public class MainActivity extends com.admision.BaseActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.mRecyclerView)
     RecyclerView mRecyclerView;
@@ -50,6 +51,16 @@ public class MainActivity extends com.admision.BaseActivity {
         mAdapter = new FindEventAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
 
+        mAdapter.setmEventlistener(new FindEventAdapter.Eventlistener() {
+            @Override
+            public void OnItemViewclick(int position, View view) {
+
+            }
+
+            @Override
+            public void OnItemBittonclick(int position) {
+            }
+        });
 //        mAdapter.setmEventlistener(new FindEventAdapter.Eventlistener() {
 //            @Override
 //            public void OnItemViewclick(int position, View view) {

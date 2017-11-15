@@ -83,7 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.common.view.CBButtonViewM
+        <com.common.view.CButtonViewM
             android:id="@+id/btnRegister"
             style="@style/LightFlatWaveColorButtonRippleStyle_"
             android:layout_width="match_parent"

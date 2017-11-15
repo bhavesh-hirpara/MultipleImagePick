@@ -5,110 +5,89 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.admision.adapter.TicketsAdapter;
+import com.admision.adapter.ViewEventAdapter;
 import com.admision.utils.AsyncHttpRequest;
 import com.admision.utils.AsyncResponseHandler;
 import com.admision.utils.Debug;
+import com.admision.utils.ExitStrategy;
 import com.admision.utils.RequestParamsUtils;
 import com.admision.utils.URLs;
-import com.admision.utils.Utils;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.HttpUrl;
 
-public class TicketsActivity extends BaseActivity {
+public class ViewEventActivity extends BaseActivity {
 
-    @BindView(R.id.mTicketRecyclerView)
-    RecyclerView mTicketRecyclerView;
+    @BindView(R.id.mRecyclerView)
+    RecyclerView mRecyclerView;
     RecyclerView.LayoutManager layoutManager;
-    TicketsAdapter mTicketsAdapter;
+    ViewEventAdapter vieweventadapter;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.btnSendRequest)
+//    Button btnSendRequest;
+//
+//    @BindView(R.id.editForgetEmail)
+//    EditText editForgetEmail;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tickets);
+        setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-//        initDrawer();
+        initBack();
         init();
     }
 
     private void init() {
-        initImageLoader();
+        setTitleText("VIEW EVENTS");
 
         layoutManager = new LinearLayoutManager(this);
-        mTicketRecyclerView.setLayoutManager(layoutManager);
-        mTicketsAdapter = new TicketsAdapter(this);
-        mTicketRecyclerView.setAdapter(mTicketsAdapter);
+        mRecyclerView.setLayoutManager(layoutManager);
+        vieweventadapter = new ViewEventAdapter(this);
+        mRecyclerView.setAdapter(vieweventadapter);
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+        vieweventadapter.setmEventlistener(new ViewEventAdapter.Eventlistener() {
             @Override
-            public void onClick(View view) {
-                TicketsActivity.super.onBackPressed();
+            public void OnItemViewclick(int position, View view) {
+
+            }
+
+            @Override
+            public void OnItemBittonclick(int position) {
             }
         });
-
-//        mTicketsAdapter.setmEventlistener(new TicketsAdapter.Eventlistener() {
+//        mAdapter.setmEventlistener(new FindEventAdapter.Eventlistener() {
 //            @Override
 //            public void OnItemViewclick(int position, View view) {
-////                Debug.e("View Details", "" + mAdapter.getItem(position).ID);
+////                Debug.e("getItem id", "" + mAdapter.getItem(position).ID);
 ////                String id = mAdapter.getItem(position).ID;
 ////                Intent intent = new Intent(getActivity(),TicketsActivity.class);
 ////                startActivity(intent);
 //            }
 //        });
-
     }
 
-    ImageLoader imageLoader;
-
-    private void initImageLoader() {
-        try {
-            imageLoader = Utils.initImageLoader(getActivity());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private boolean validate() {
-//        if (editEmail.getText().toString().trim().length() <= 0) {
-//            showToast(getString(R.string.err_email), Toast.LENGTH_SHORT);
-//            return false;
-//        }
-
-//        if (!Patterns.EMAIL_ADDRESS.matcher(editLoginEmail.getText()).matches()) {
-//            showToast(getString(R.string.err_email_invalid), Toast.LENGTH_SHORT);
-//            return false;
-//        }
-
-
-        return true;
-    }
-
-    public void getTicketsData() {
+    public void getEventData() {
         try {
             showDialog("");
 
             HttpUrl.Builder body = RequestParamsUtils.newRequestUrlBuilder(getActivity(), URLs.GET_CHALLAN());
             Call call = AsyncHttpRequest.newRequestGet(getActivity(), body.build().toString());
-            call.enqueue(new GetTicketsDataHandler(getActivity()));
+            call.enqueue(new GetEventDataHandler(getActivity()));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private class GetTicketsDataHandler extends AsyncResponseHandler {
+    private class GetEventDataHandler extends AsyncResponseHandler {
 
-        public GetTicketsDataHandler(Activity context) {
+        public GetEventDataHandler(Activity context) {
             super(context);
         }
 
@@ -129,7 +108,7 @@ public class TicketsActivity extends BaseActivity {
         public void onSuccess(String response) {
 
             try {
-                Debug.e("", "getTicketsData# " + response);
+                Debug.e("", "getEventData# " + response);
                 if (response != null && response.length() > 0) {
 
 //                    final SymptomTrackRes symptomTrackRes = new Gson().fromJson(response, new TypeToken<SymptomTrackRes>() {
@@ -150,8 +129,28 @@ public class TicketsActivity extends BaseActivity {
 
         @Override
         public void onFailure(Throwable e, String content) {
-            Debug.e("", "onFailure# " + content);
+            Debug.e("", "getEventData# " + content);
             dismissDialog();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        try {
+            if (result.isDrawerOpen()) {
+                result.closeDrawer();
+            } else {
+                if (ExitStrategy.canExit()) {
+                    super.onBackPressed();
+                } else {
+                    ExitStrategy.startExitDelay(2000);
+                    Toast.makeText(getActivity(), getString(R.string.exit_msg),
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        } catch (Exception e) {
+
         }
     }
 }

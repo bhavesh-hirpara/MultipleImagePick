@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.github.rey5137:material-1.2.4">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/material-1.2.4.aar/87f7a473b642a42fc1e509d3870be73f/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/material-1.2.4.aar/87f7a473b642a42fc1e509d3870be73f/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/material-1.2.4.aar/a779ef78bb69309be27b9937b2d26fea/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/material-1.2.4.aar/a779ef78bb69309be27b9937b2d26fea/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

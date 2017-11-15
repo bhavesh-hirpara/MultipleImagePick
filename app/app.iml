@@ -127,6 +127,8 @@
     <orderEntry type="library" name="com.android.support:support-compat-27.0.0" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-iid-11.4.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-vector-drawable-27.0.0" level="project" />
+    <orderEntry type="library" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
+    <orderEntry type="library" name="com.android.support.constraint:constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" name="me.zhanghai.android.materialprogressbar:library-1.4.2" level="project" />
     <orderEntry type="library" name="org.apache.commons:commons-lang3:3.4@jar" level="project" />
     <orderEntry type="library" name="com.google.code.gson:gson:2.8.2@jar" level="project" />
