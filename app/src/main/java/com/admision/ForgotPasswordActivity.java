@@ -3,9 +3,7 @@ package com.admision;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.admision.objects.LoginRes;
@@ -32,8 +30,8 @@ public class ForgotPasswordActivity extends BaseActivity {
     @BindView(R.id.editEmail)
     AppCompatEditText editEmail;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,18 +40,20 @@ public class ForgotPasswordActivity extends BaseActivity {
         ButterKnife.bind(this);
 
 //        initDrawer();
+        initBack();
         init();
     }
 
     private void init() {
+        setTitle("FORGOT PASSWORD");
         initImageLoader();
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ForgotPasswordActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ForgotPasswordActivity.super.onBackPressed();
+//            }
+//        });
 
     }
 

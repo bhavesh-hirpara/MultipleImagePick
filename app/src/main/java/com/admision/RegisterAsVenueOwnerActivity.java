@@ -39,8 +39,8 @@ public class RegisterAsVenueOwnerActivity extends BaseActivity {
 
     @BindView(R.id.tvCompanyType)
     TextView tvCompanyType;
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,19 +48,21 @@ public class RegisterAsVenueOwnerActivity extends BaseActivity {
         setContentView(R.layout.activity_register_as_venue_owner);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+        initBack();
+//        initDrawer(true);
         init();
     }
 
     private void init() {
+        setTitleText("REGISTER AS VENUE OWNER");
         initImageLoader();
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RegisterAsVenueOwnerActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                RegisterAsVenueOwnerActivity.super.onBackPressed();
+//            }
+//        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

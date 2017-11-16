@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.admision.objects.LoginRes;
 import com.admision.utils.AsyncHttpRequest;
@@ -31,8 +30,8 @@ public class RegisterAsPromoterActivity extends BaseActivity {
     @BindView(R.id.editPhoneNumber)
     EditText editPhoneNumber;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,19 +39,21 @@ public class RegisterAsPromoterActivity extends BaseActivity {
         setContentView(R.layout.activity_register_as_promoter);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+        initBack();
+//        initDrawer(true);
         init();
     }
 
     private void init() {
+        setTitleText("REGISTER AS PROMOTER");
         initImageLoader();
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RegisterAsPromoterActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                RegisterAsPromoterActivity.super.onBackPressed();
+//            }
+//        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

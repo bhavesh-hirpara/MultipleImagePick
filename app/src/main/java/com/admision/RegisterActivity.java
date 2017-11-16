@@ -59,7 +59,7 @@ public class RegisterActivity extends BaseActivity {
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+//        initDrawer(true);
         init();
     }
 

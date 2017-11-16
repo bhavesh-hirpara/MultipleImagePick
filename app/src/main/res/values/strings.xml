@@ -152,4 +152,6 @@
     <string name="interested">Interested ?</string>
     <string name="Advertisement">Advertisement</string>
     <string name="btn_login">LOGIN</string>
+    <string name="btn_show_event">SHOW EVENT</string>
+    <string name="attending">Attending</string>
 </resources>

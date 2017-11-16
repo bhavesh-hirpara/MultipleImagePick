@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.admision.objects.LoginRes;
 import com.admision.utils.AsyncHttpRequest;
@@ -37,8 +36,8 @@ public class SeaechEventActivity extends BaseActivity {
     @BindView(R.id.editEndDateTime)
     EditText editEndDateTime;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
 
     @BindView(R.id.radioEventMode)
     RadioGroup radioEventMode;
@@ -62,19 +61,22 @@ public class SeaechEventActivity extends BaseActivity {
         setContentView(R.layout.activity_search_event);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+        initBack();
+//        initDrawer(true);
         init();
     }
 
     private void init() {
+
+        setTitleText("SEARCH EVENT");
         initImageLoader();
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SeaechEventActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SeaechEventActivity.super.onBackPressed();
+//            }
+//        });
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override

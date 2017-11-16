@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?><!--android.support.v7.widget.CardView-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/squere_edittext"
+        android:orientation="horizontal">
+
+        <com.common.view.CTextView
+            android:id="@+id/tvTcketName"
+            style="@style/txt_000_14"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="1" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_light_" />
+
+
+        <com.common.view.CTextView
+            android:id="@+id/tvFirstName"
+            style="@style/txt_000_14"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="First Name" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_light_" />
+
+
+        <com.common.view.CTextView
+            android:id="@+id/tvLastName"
+            style="@style/txt_000_14"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Last Name" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

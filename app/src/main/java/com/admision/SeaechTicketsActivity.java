@@ -35,8 +35,8 @@ public class SeaechTicketsActivity extends BaseActivity {
     @BindView(R.id.editSubEventPeriod)
     EditText editSubEventPeriod;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
     @BindView(R.id.tvSelectVenue)
     TextView tvSelectVenue;
     @BindView(R.id.tvEventName)
@@ -57,19 +57,22 @@ public class SeaechTicketsActivity extends BaseActivity {
         setContentView(R.layout.activity_search_tickets);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+        initBack();
+//        initDrawer(true);
         init();
     }
 
     private void init() {
+        setTitleText("SEARCH TICKET");
+
         initImageLoader();
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SeaechTicketsActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SeaechTicketsActivity.super.onBackPressed();
+//            }
+//        });
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override

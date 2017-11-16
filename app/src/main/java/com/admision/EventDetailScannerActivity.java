@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import butterknife.ButterKnife;
 
-public class EventDetailActivity extends BaseActivity {
+public class EventDetailScannerActivity extends BaseActivity {
 
 //    @BindView(R.id.tvEventName)
 //    TextView tvEventName;
@@ -34,11 +34,13 @@ public class EventDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
         ButterKnife.bind(this);
-        
+
+        initBack();
         init();
     }
 
     private void init() {
+        setTitleText("EVENTS DETAILS SCANNER");
         
     }
 }

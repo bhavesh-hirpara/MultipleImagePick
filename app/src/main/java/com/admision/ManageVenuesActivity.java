@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.admision.adapter.ManageVenuesAdapter;
 import com.admision.utils.AsyncHttpRequest;
@@ -31,8 +30,8 @@ public class ManageVenuesActivity extends BaseActivity {
     @BindView(R.id.btnAddNew)
     Button btnAddNew;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,11 +39,13 @@ public class ManageVenuesActivity extends BaseActivity {
         setContentView(R.layout.activity_manage_venues);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+        initBack();
+//        initDrawer(true);
         init();
     }
 
     private void init() {
+        setTitleText("MANAGE VANUE");
 
         layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -61,12 +62,12 @@ public class ManageVenuesActivity extends BaseActivity {
 //            }
 //        });
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ManageVenuesActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ManageVenuesActivity.super.onBackPressed();
+//            }
+//        });
 
         btnAddNew.setOnClickListener(new View.OnClickListener() {
             @Override

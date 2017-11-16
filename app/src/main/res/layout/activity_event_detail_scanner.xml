@@ -66,6 +66,7 @@
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <FrameLayout
@@ -126,14 +127,15 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="180dp"
                     android:orientation="vertical">
 
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+
                         android:background="@drawable/btn_bg_accept">
 
                         <LinearLayout
@@ -198,7 +200,23 @@
                                     android:gravity="start|center_vertical"
                                     android:text="18+" />
 
-                                <!--<View-->
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@color/gray_light" />
+
+                                <com.common.view.CBTextView
+                                    android:id="@+id/tvLocation"
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableLeft="@drawable/ic_location_on_white"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="0.7mi - soho" />
+
 
 
                             </LinearLayout>
@@ -226,6 +244,27 @@
                                     android:gravity="start|center_vertical"
                                     android:text="Oct - 11" />
 
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@color/gray_light" />
+
+                                <com.common.view.CBTextView
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Transaction Status : " />
+
+                                <com.common.view.CBTextView
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start|center_vertical"
+                                    android:text="On" />
+
 
                             </LinearLayout>
 
@@ -236,8 +275,6 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/squere_edittext">
 
@@ -261,142 +298,78 @@
                                 android:text="No Data Available" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginRight="30dp"
-                            android:background="@color/black_translucent_"
-                            android:orientation="vertical">
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginLeft="30dp"-->
+                            <!--android:layout_marginRight="30dp"-->
+                            <!--android:background="@color/black_translucent_"-->
+                            <!--android:orientation="vertical">-->
 
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                            <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:orientation="horizontal">-->
 
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical"
-                                    android:padding="10dp">
+                                <!--<LinearLayout-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:layout_weight="1"-->
+                                    <!--android:orientation="vertical"-->
+                                    <!--android:padding="10dp">-->
 
-                                    <com.common.view.CBTextView
-                                        android:id="@+id/tvLocation"
-                                        style="@style/txt_fff_16"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="No Data Available" />
+                                    <!--<com.common.view.CBTextView-->
+                                        <!--android:id="@+id/tvLocation"-->
+                                        <!--style="@style/txt_fff_16"-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="No Data Available" />-->
 
-                                    <com.common.view.CTextView
-                                        android:id="@+id/tvCity"
-                                        style="@style/txt_fff_14"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="No Data Available" />
+                                    <!--<com.common.view.CTextView-->
+                                        <!--android:id="@+id/tvCity"-->
+                                        <!--style="@style/txt_fff_14"-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="No Data Available" />-->
 
-                                </LinearLayout>
+                                <!--</LinearLayout>-->
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="25dp"
-                                    android:src="@drawable/ic_location_on_white" />
+                                <!--<ImageView-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:layout_marginTop="25dp"-->
+                                    <!--android:src="@drawable/ic_location_on_white" />-->
 
-                            </LinearLayout>
+                            <!--</LinearLayout>-->
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="0.5dp"
-                                android:background="@color/white" />
+                            <!--<View-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="0.5dp"-->
+                                <!--android:background="@color/white" />-->
 
-                            <com.common.view.CTextView
-                                android:id="@+id/tvTimeSqure"
-                                style="@style/txt_fff_14"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="10dp"
-                                android:text="Time Squre" />
+                            <!--<com.common.view.CTextView-->
+                                <!--android:id="@+id/tvTimeSqure"-->
+                                <!--style="@style/txt_fff_14"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:padding="10dp"-->
+                                <!--android:text="Time Squre" />-->
 
-                        </LinearLayout>
+                        <!--</LinearLayout>-->
 
                     </FrameLayout>
 
-                    <LinearLayout
+                    <com.common.view.CButtonViewM
+                        android:id="@+id/btnLogin"
+                        style="@style/LightFlatWaveColorButtonRippleStyle_"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginTop="10dp">
-
-                        <com.common.view.CTextView
-                            style="@style/txt_000_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Time Squre" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_marginBottom="10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-
-                        <com.common.view.CTextView
-                            style="@style/txt_000_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/interested" />
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Yes" />
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mau be" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right">
-
-
-
-                            <FrameLayout
-                                android:id="@+id/llProfile"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center">
-
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:id="@+id/imgUserProfile"
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:layout_gravity="right"
-                                    android:background="@drawable/border_circle"
-                                    app:civ_border_width="2dp" />
-
-                                <ImageView
-                                    android:id="@+id/imgShare"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/ic_share" />
-
-                            </FrameLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
+                        android:background="@drawable/btn_bg_accept"
+                        android:text="@string/btn_show_event"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 

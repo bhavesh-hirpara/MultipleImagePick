@@ -2,10 +2,8 @@ package com.admision;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.admision.objects.LoginRes;
 import com.admision.utils.AsyncHttpRequest;
@@ -28,8 +26,8 @@ public class ChangePasswordActivity extends BaseActivity {
     @BindView(R.id.btnResetPassword)
     Button btnResetPassword;
 
-    @BindView(R.id.tvBackArrow)
-    TextView tvBackArrow;
+//    @BindView(R.id.tvBackArrow)
+//    TextView tvBackArrow;
     @BindView(R.id.editCode)
     EditText editCode;
     @BindView(R.id.editNewPassword)
@@ -43,19 +41,21 @@ public class ChangePasswordActivity extends BaseActivity {
         setContentView(R.layout.activity_change_password);
         ButterKnife.bind(this);
 
-        initDrawer(true);
+//        initDrawer(true);
+        initBack();
         init();
     }
 
     private void init() {
+        setTitleText("CHANGE PASSWORD");
         initImageLoader();
 
-        tvBackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ChangePasswordActivity.super.onBackPressed();
-            }
-        });
+//        tvBackArrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ChangePasswordActivity.super.onBackPressed();
+//            }
+//        });
 
     }
 

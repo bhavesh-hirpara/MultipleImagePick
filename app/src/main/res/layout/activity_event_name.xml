@@ -198,6 +198,32 @@
                                     android:gravity="start|center_vertical"
                                     android:text="18+" />
 
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@color/gray_light" />
+
+                                <com.common.view.CBTextView
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Created on :" />
+
+                                <com.common.view.CBTextView
+                                    android:id="@+id/tvCreateDate"
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="11/02/2017" />
+
+
+
                                 <!--<View-->
 
 
@@ -225,6 +251,59 @@
                                     android:drawableLeft="@drawable/ic_date_"
                                     android:gravity="start|center_vertical"
                                     android:text="Oct - 11" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@color/gray_light" />
+
+                                <com.common.view.CBTextView
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Pubile" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@color/gray_light" />
+
+                                <com.common.view.CBTextView
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Approved" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@color/gray_light" />
+
+                                <com.common.view.CBTextView
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="TA :" />
+
+                                <com.common.view.CBTextView
+                                    style="@style/txt_fff_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="50" />
 
 
                             </LinearLayout>
@@ -340,7 +419,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginBottom="10"
+                        android:layout_marginBottom="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -348,21 +427,6 @@
                         android:layout_marginTop="20dp"
                         android:orientation="horizontal">
 
-                        <com.common.view.CTextView
-                            style="@style/txt_000_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/interested" />
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Yes" />
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mau be" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -373,13 +437,11 @@
 
 
                             <FrameLayout
-                                android:id="@+id/llProfile"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center">
 
                                 <de.hdodenhof.circleimageview.CircleImageView
-                                    android:id="@+id/imgUserProfile"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
                                     android:layout_gravity="right"
@@ -392,6 +454,49 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:src="@drawable/ic_share" />
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="right"
+                                    android:background="@drawable/border_circle"
+                                    app:civ_border_width="2dp" />
+
+
+                                <ImageView
+                                    android:id="@+id/imgEmail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_mail" />
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="right"
+                                    android:background="@drawable/border_circle"
+                                    app:civ_border_width="2dp" />
+
+                                <ImageView
+                                    android:id="@+id/imgEdit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_edit_pink" />
 
                             </FrameLayout>
                         </LinearLayout>

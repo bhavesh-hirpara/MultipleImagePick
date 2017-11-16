@@ -47,7 +47,7 @@ public class EditVenueActivity extends BaseActivity {
     @BindView(R.id.editHoursOfPeration)
     EditText editHoursOfPeration;
 
-//    @BindView(R.id.tvBackArrow)
+    //    @BindView(R.id.tvBackArrow)
 //    TextView tvBackArrow;
     @BindView(R.id.tvState)
     TextView tvState;
@@ -75,7 +75,7 @@ public class EditVenueActivity extends BaseActivity {
     }
 
     private void init() {
-
+        setTitleText("EDIT VENUE");
 
 //        tvBackArrow.setOnClickListener(new View.OnClickListener() {
 //            @Override

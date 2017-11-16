@@ -7,64 +7,101 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <FrameLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
+        <!--<android.support.design.widget.CollapsingToolbarLayout-->
+        <!--android:id="@+id/collapsing_toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--app:contentScrim="@android:color/transparent"-->
+        <!--app:expandedTitleMarginStart="48dp"-->
+        <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary_dark"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways">
 
-            <com.common.view.CTextView
-                android:id="@+id/tvBackArrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:drawableStart="@drawable/ic_arrow_left_white"
-                android:focusable="true" />
-
-            <com.common.view.CBTextView
-                style="@style/txt_fff_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="MANAGE VENUE"
-                android:textAlignment="center" />
-
-            <com.common.view.CBTextView
-                style="@style/txt_theme_12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:clickable="false"
-                android:drawableStart="@drawable/ic_arrow_left_white"
-                android:visibility="invisible" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="right|center">
+            <include layout="@layout/topbar" />
 
             <com.common.view.CButtonView
+                android:layout_gravity="right|center"
                 android:id="@+id/btnAddNew"
                 style="@style/txt_theme_12"
                 android:layout_width="80dp"
+                android:layout_marginRight="15dp"
                 android:layout_height="25dp"
                 android:background="@color/white"
                 android:text="Add New"
                 android:visibility="visible" />
+        </FrameLayout>
 
-        </LinearLayout>
-    </FrameLayout>
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+    </android.support.design.widget.AppBarLayout>
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center">-->
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/primary_dark"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:padding="10dp">-->
+
+            <!--<com.common.view.CTextView-->
+                <!--android:id="@+id/tvBackArrow"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:clickable="true"-->
+                <!--android:drawableStart="@drawable/ic_arrow_left_white"-->
+                <!--android:focusable="true" />-->
+
+            <!--<com.common.view.CBTextView-->
+                <!--style="@style/txt_fff_16"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="MANAGE VENUE"-->
+                <!--android:textAlignment="center" />-->
+
+            <!--<com.common.view.CBTextView-->
+                <!--style="@style/txt_theme_12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@color/white"-->
+                <!--android:clickable="false"-->
+                <!--android:drawableStart="@drawable/ic_arrow_left_white"-->
+                <!--android:visibility="invisible" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:gravity="right|center">-->
+
+            <!--<com.common.view.CButtonView-->
+                <!--android:id="@+id/btnAddNew"-->
+                <!--style="@style/txt_theme_12"-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="25dp"-->
+                <!--android:background="@color/white"-->
+                <!--android:text="Add New"-->
+                <!--android:visibility="visible" />-->
+
+        <!--</LinearLayout>-->
+    <!--</FrameLayout>-->
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nestedScrollView"

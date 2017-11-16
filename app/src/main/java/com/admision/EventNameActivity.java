@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import butterknife.ButterKnife;
 
-public class EventDetailActivity extends BaseActivity {
+public class EventNameActivity extends BaseActivity {
 
 //    @BindView(R.id.tvEventName)
 //    TextView tvEventName;
@@ -32,7 +32,7 @@ public class EventDetailActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_detail);
+        setContentView(R.layout.activity_event_name);
         ButterKnife.bind(this);
         
         init();
