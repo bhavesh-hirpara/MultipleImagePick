@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.admision.objects.LoginRes;
 import com.admision.utils.AsyncHttpRequest;
@@ -25,22 +24,20 @@ import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.FormBody;
 
-public class SeaechTicketsActivity extends BaseActivity {
+public class SearchEventActivity extends BaseActivity {
 
     @BindView(R.id.btnSearch)
     Button btnSearch;
 
-    @BindView(R.id.editEventPeriod)
-    EditText editEventPeriod;
-    @BindView(R.id.editSubEventPeriod)
-    EditText editSubEventPeriod;
+    @BindView(R.id.editEventName)
+    EditText editEventName;
+    @BindView(R.id.editStartDate)
+    EditText editStartDate;
+    @BindView(R.id.editEndDateTime)
+    EditText editEndDateTime;
 
 //    @BindView(R.id.tvBackArrow)
 //    TextView tvBackArrow;
-    @BindView(R.id.tvSelectVenue)
-    TextView tvSelectVenue;
-    @BindView(R.id.tvEventName)
-    TextView tvEventName;
 
     @BindView(R.id.radioEventMode)
     RadioGroup radioEventMode;
@@ -51,10 +48,17 @@ public class SeaechTicketsActivity extends BaseActivity {
     @BindView(R.id.radioAll)
     RadioButton radioAll;
 
+    @BindView(R.id.radioEventStatus)
+    RadioGroup radioEventStatus;
+    @BindView(R.id.radioApprove)
+    RadioButton radioApprove;
+    @BindView(R.id.radioReject)
+    RadioButton radioReject;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_tickets);
+        setContentView(R.layout.activity_search_event);
         ButterKnife.bind(this);
 
         initBack();
@@ -63,14 +67,14 @@ public class SeaechTicketsActivity extends BaseActivity {
     }
 
     private void init() {
-        setTitleText("SEARCH TICKET");
 
+        setTitleText("SEARCH EVENT");
         initImageLoader();
 
 //        tvBackArrow.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                SeaechTicketsActivity.super.onBackPressed();
+//                SeaechEventActivity.super.onBackPressed();
 //            }
 //        });
 
