@@ -14,6 +14,9 @@
     <keyboard-shortcut first-keystroke="alt enter" />
   </action>
   <action id="CopyPaths" />
+  <action id="EditorDuplicateLines">
+    <keyboard-shortcut first-keystroke="alt y" />
+  </action>
   <action id="Images.Editor.ActualSize">
     <keyboard-shortcut first-keystroke="ctrl divide" />
   </action>
@@ -25,6 +28,7 @@
     <keyboard-shortcut first-keystroke="shift alt r" />
     <keyboard-shortcut first-keystroke="f2" />
   </action>
+  <action id="SelectNextOccurrence" />
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="shift alt enter" />
   </action>
