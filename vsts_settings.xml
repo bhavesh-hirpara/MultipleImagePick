@@ -1,7 +1,16 @@
 <application>
   <component name="VSTSSettings">
     <option name="serverContexts">
-      <array />
+      <array>
+        <ServerContextState>
+          <option name="type" value="TFS" />
+          <option name="uri" value="https://tfs.tekark.com/tfs/DefaultCollection" />
+          <option name="serverUri" value="https://tfs.tekark.com/tfs/DefaultCollection" />
+          <option name="userId" value="ac9fa45e-2d6f-4986-aa5d-c513978053ea" />
+          <option name="teamProjectCollectionReference" value="{&quot;id&quot;:null,&quot;name&quot;:null,&quot;url&quot;:null}" />
+          <option name="teamProjectReference" value="{&quot;abbreviation&quot;:null,&quot;description&quot;:null,&quot;id&quot;:null,&quot;name&quot;:null,&quot;revision&quot;:0,&quot;state&quot;:null,&quot;url&quot;:null}" />
+        </ServerContextState>
+      </array>
     </option>
     <option name="properties">
       <array />
