@@ -13,7 +13,12 @@
       </array>
     </option>
     <option name="properties">
-      <array />
+      <array>
+        <PropertyState>
+          <option name="name" value="tfHome" />
+          <option name="value" value="" />
+        </PropertyState>
+      </array>
     </option>
   </component>
 </application>
