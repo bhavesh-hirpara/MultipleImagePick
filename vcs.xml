@@ -130,4 +130,7 @@
     </option>
     <option name="cloneParentDir" value="F:\AndroidVideoWorkspace" />
   </component>
+  <component name="Vcs.Log.App.Settings">
+    <option name="MIGRATED" value="true" />
+  </component>
 </application>
