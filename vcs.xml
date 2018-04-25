@@ -130,9 +130,13 @@
           <option name="url" value="https://gitlab.com/kartum_android/Health-Insurance.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://gitlab.com/kartum_android/FamilyEventApp.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="F:\AndroidVideoWorkspace" />
+    <option name="cloneParentDir" value="F:\AndroidStudioWorkspace" />
   </component>
   <component name="Vcs.Log.App.Settings">
     <option name="MIGRATED" value="true" />
