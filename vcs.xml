@@ -134,6 +134,10 @@
           <option name="url" value="https://gitlab.com/kartum_android/FamilyEventApp.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://gitlab.com/kartum_android/FitProHub.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="F:\AndroidStudioWorkspace" />
