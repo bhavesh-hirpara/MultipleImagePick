@@ -154,6 +154,10 @@
           <option name="url" value="https://android.googlesource.com/platform/packages/apps/Gallery2" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://gitlab.com/kartum-apps/spinwheel.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="F:\AndroidStudioWorkspace" />
