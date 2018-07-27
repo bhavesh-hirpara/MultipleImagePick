@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.common.view.CTextView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/txt_333_16"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="left|center_vertical"
-    android:padding="10dp"
-    android:text="@string/app_name" />

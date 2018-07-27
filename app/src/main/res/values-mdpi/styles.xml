@@ -1,0 +1,28 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--<style name="AppBaseTheme" parent="android:Theme.Light"></style>-->
+
+<!--<style name="AppTheme" parent="AppBaseTheme"></style>-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <!--&lt;!&ndash;<item name="android:statusBarColor">#AA1a3f69</item>&ndash;&gt;-->
+        <!--<item name="android:windowTranslucentStatus">false</item>-->
+    </style>
+
+<style name="btn">
+    <item name="android:textColor">#ffffff</item>
+    <item name="android:textSize">18sp</item>
+</style>
+
+
+<style name="title_bar">
+    <item name="android:textColor">#d9f3ff</item>
+    <item name="android:textSize">22sp</item>
+</style>
+
+</resources>

@@ -4,75 +4,54 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/primary_dark"
+    android:background="@color/blue_avail"
     android:minHeight="?attr/actionBarSize"
     android:orientation="horizontal"
+    android:theme="@style/Toolbar"
     app:contentInsetStart="0dp"
     app:layout_collapseMode="pin"
     app:layout_scrollFlags="scroll|enterAlways"
-    app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
-    app:theme="@style/Toolbar">
+    app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center">
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <com.common.view.CBTextView
-                android:id="@+id/tvTitleText"
-                style="@style/txt_fff_18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="@string/app_name" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvTitleText"
+                        style="@style/txt_fff_18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/app_name" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imgMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|start"
-            android:contentDescription="@null"
-            android:padding="10dp"
-            android:src="@drawable/ic_menu"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|start"
-            android:contentDescription="@null"
-            android:padding="10dp"
-            android:src="@drawable/ic_arrow_left_white"
-            android:visibility="gone" />
-
-    </FrameLayout>
-    <!--<ImageView-->
-    <!--android:id="@+id/img_more"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center_vertical|end"-->
-    <!--android:contentDescription="@null"-->
-    <!--android:padding="10dp"-->
-    <!--android:src="@mipmap/ic_menu"-->
-    <!--android:visibility="visible" />-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/img_search"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center_vertical|right"-->
-    <!--android:contentDescription="@null"-->
-    <!--android:padding="10dp"-->
-    <!--android:src="@drawable/btn_search" />-->
+    </LinearLayout>
 
 </android.support.v7.widget.Toolbar>
